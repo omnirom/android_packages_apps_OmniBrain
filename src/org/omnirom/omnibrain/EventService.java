@@ -61,7 +61,7 @@ import android.view.animation.PathInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import org.omnirom.omnigears.R;
+import org.omnirom.omnibrain.R;
 import org.omnirom.omnigears.actions.OmniAction;
 import org.omnirom.omnigears.actions.OmniActionsInflate;
 import java.util.ArrayList;

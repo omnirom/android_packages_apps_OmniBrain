@@ -127,7 +127,7 @@
             android:title="@string/home_networks_title"
             android:summary="@string/home_network_events_summary"
             android:persistent="false"
-            android:fragment="org.omnirom.omnigears.service.HomeNetworkEventsSettings" />
+            android:fragment="org.omnirom.omnibrain.HomeNetworkEventsSettings" />
 
         <Preference
             android:key="work_network_events"
@@ -136,7 +136,7 @@
             android:title="@string/work_networks_title"
             android:summary="@string/work_network_events_summary"
             android:persistent="false"
-            android:fragment="org.omnirom.omnigears.service.WorkNetworkEventsSettings" />
+            android:fragment="org.omnirom.omnibrain.WorkNetworkEventsSettings" />
 
         <org.omnirom.omnigears.preference.SeekBarPreference
             android:dependency="event_service_enabled"
