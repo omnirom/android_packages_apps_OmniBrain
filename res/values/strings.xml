@@ -51,4 +51,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="work_network_events_summary">Work network events</string>
     <string name="work_connect_actions_title">When connect to Work</string>
     <string name="work_disconnect_actions_title">When disconnect from Work</string>
+    <string name="unit_minutes">min</string>
+
+    <!-- Omni actions -->
+    <string name="action_location_off_title">Location off</string>
+    <string name="action_location_sensors_only_title">Location sensors only</string>
+    <string name="action_location_battery_saving_title">Location battery saving</string>
+    <string name="action_location_high_accuracy_title">Location high accuracy</string>
+
 </resources>
