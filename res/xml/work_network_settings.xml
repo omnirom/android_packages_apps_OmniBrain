@@ -21,17 +21,17 @@
     android:key="work_network_events_settings"
     android:title="@string/work_networks_title">
 
-    <org.omnirom.omnigears.preference.WifiSelectListPreference
+    <org.omnirom.omnilib.preference.WifiSelectListPreference
         android:key="work_tagged_networks"
         android:persistent="false"
         android:title="@string/tagged_networks_title" />
 
-    <org.omnirom.omnigears.preference.OmniActionsListPreference
+    <org.omnirom.omnilib.preference.OmniActionsListPreference
         android:key="work_connect_actions"
         android:persistent="false"
         android:title="@string/work_connect_actions_title" />
 
-    <org.omnirom.omnigears.preference.OmniActionsListPreference
+    <org.omnirom.omnilib.preference.OmniActionsListPreference
         android:key="work_disconnect_actions"
         android:persistent="false"
         android:title="@string/work_disconnect_actions_title" />

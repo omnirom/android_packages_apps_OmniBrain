@@ -31,16 +31,17 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
     frameworks/support/v7/preference/res \
-    frameworks/support/v14/preference/res \
-    packages/apps/OmniGears/res
+    frameworks/support/v14/preference/res
 
 LOCAL_AAPT_FLAGS := --auto-add-overlay \
     --extra-packages android.support.v7.preference \
     --extra-packages android.support.v14.preference \
-    --extra-packages android.support.v17.preference \
-    --extra-packages org.omnirom.omnigears
+    --extra-packages android.support.v17.preference
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
+
+include frameworks/base/packages/SettingsLib/common.mk
+include packages/apps/OmniLib/common.mk
 
 LOCAL_PACKAGE_NAME := OmniBrain
 LOCAL_CERTIFICATE := platform

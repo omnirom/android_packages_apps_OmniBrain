@@ -29,16 +29,16 @@ import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.text.TextUtils;
+import android.preference.PreferenceActivity;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import org.omnirom.omnibrain.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import org.omnirom.omnigears.preference.AppMultiSelectListPreference;
-import org.omnirom.omnigears.preference.ScrollAppsViewPreference;
-import org.omnirom.omnigears.preference.SeekBarPreference;
+import org.omnirom.omnilib.preference.AppMultiSelectListPreference;
+import org.omnirom.omnilib.preference.ScrollAppsViewPreference;
+import org.omnirom.omnilib.preference.SeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -46,7 +46,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-public class SettingsActivity extends PreferenceActivity implements OnPreferenceChangeListener, Indexable  {
+public class OmniBrainActivity extends PreferenceActivity implements OnPreferenceChangeListener, Indexable {
     public static final String EVENTS_PREFERENCES_NAME = "event_service";
 
     public static final String EVENT_A2DP_CONNECT = "bt_a2dp_connect_app_string";
@@ -105,13 +105,8 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
     private String mServiceStopped;
     private SeekBarPreference mWiredThresholdTimeout;
 
-    @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.OMNI_SETTINGS;
-    }
-
     private SharedPreferences getPrefs() {
-        return getActivity().getSharedPreferences(EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        return getSharedPreferences(EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
     }
 
     @Override
@@ -131,7 +126,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         // -- End backward compatibility
 
         mEnable = (SwitchPreference) findPreference(EVENT_SERVICE_ENABLED);
-        mEnable.setChecked(getPrefs().getBoolean(EventServiceSettings.EVENT_SERVICE_ENABLED, false));
+        mEnable.setChecked(getPrefs().getBoolean(EVENT_SERVICE_ENABLED, false));
         mEnable.setOnPreferenceChangeListener(this);
         mServiceRunning = getResources().getString(R.string.event_service_running);
         mServiceStopped = getResources().getString(R.string.event_service_stopped);
@@ -140,31 +135,31 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         mChooserPosition = (ListPreference) findPreference(APP_CHOOSER_POSITION);
         mChooserPosition.setOnPreferenceChangeListener(this);
         mChooserPosition.setValue(
-                Integer.toString(getPrefs().getInt(EventServiceSettings.APP_CHOOSER_POSITION, 0)));
+                Integer.toString(getPrefs().getInt(APP_CHOOSER_POSITION, 0)));
         mChooserPosition.setSummary(mChooserPosition.getEntry());
 
         mAutoStart = (SwitchPreference) findPreference(EVENT_MEDIA_PLAYER_START);
-        mAutoStart.setChecked(getPrefs().getBoolean(EventServiceSettings.EVENT_MEDIA_PLAYER_START, false));
+        mAutoStart.setChecked(getPrefs().getBoolean(EVENT_MEDIA_PLAYER_START, false));
         mAutoStart.setOnPreferenceChangeListener(this);
 
         mMusicActive = (SwitchPreference) findPreference(EVENT_MUSIC_ACTIVE);
-        mMusicActive.setChecked(getPrefs().getBoolean(EventServiceSettings.EVENT_MUSIC_ACTIVE, false));
+        mMusicActive.setChecked(getPrefs().getBoolean(EVENT_MUSIC_ACTIVE, false));
         mMusicActive.setOnPreferenceChangeListener(this);
 
         mAutorun = (SwitchPreference) findPreference(EVENT_AUTORUN_SINGLE);
-        mAutorun.setChecked(getPrefs().getBoolean(EventServiceSettings.EVENT_AUTORUN_SINGLE, true));
+        mAutorun.setChecked(getPrefs().getBoolean(EVENT_AUTORUN_SINGLE, true));
         mAutorun.setOnPreferenceChangeListener(this);
 
         mChooserTimeout = (SeekBarPreference) findPreference(APP_CHOOSER_TIMEOUT);
-        mChooserTimeout.setValue(getPrefs().getInt(EventServiceSettings.APP_CHOOSER_TIMEOUT, 15));
+        mChooserTimeout.setValue(getPrefs().getInt(APP_CHOOSER_TIMEOUT, 15));
         mChooserTimeout.setOnPreferenceChangeListener(this);
 
         mDisableWifi = (SeekBarPreference) findPreference(DISABLE_WIFI_THRESHOLD);
-        mDisableWifi.setValue(getPrefs().getInt(EventServiceSettings.DISABLE_WIFI_THRESHOLD, 0));
+        mDisableWifi.setValue(getPrefs().getInt(DISABLE_WIFI_THRESHOLD, 0));
         mDisableWifi.setOnPreferenceChangeListener(this);
 
         mWiredThresholdTimeout = (SeekBarPreference) findPreference(WIRED_EVENTS_THRESHOLD);
-        mWiredThresholdTimeout.setValue(getPrefs().getInt(EventServiceSettings.WIRED_EVENTS_THRESHOLD, 0));
+        mWiredThresholdTimeout.setValue(getPrefs().getInt(WIRED_EVENTS_THRESHOLD, 0));
         mWiredThresholdTimeout.setOnPreferenceChangeListener(this);
 
         mA2DPappSelect = (AppMultiSelectListPreference) findPreference(EVENT_A2DP_CONNECT);
@@ -238,9 +233,9 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         } else if (preference == mEnable) {
             boolean value = ((Boolean) newValue).booleanValue();
             if (value) {
-                getActivity().startService(new Intent(getActivity(), EventService.class));
+                startService(new Intent(getApplicationContext(), EventService.class));
             } else {
-                getActivity().stopService(new Intent(getActivity(), EventService.class));
+                stopService(new Intent(getApplicationContext(), EventService.class));
             }
             getPrefs().edit().putBoolean(EVENT_SERVICE_ENABLED, value).commit();
             mHandler.postDelayed(new Runnable() {

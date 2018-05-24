@@ -27,13 +27,13 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.text.TextUtils;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.settings.R;
+import org.omnirom.omnibrain.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import org.omnirom.omnigears.preference.OmniActionsListPreference;
-import org.omnirom.omnigears.preference.WifiSelectListPreference;
+import org.omnirom.omnilib.preference.OmniActionsListPreference;
+import org.omnirom.omnilib.preference.WifiSelectListPreference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -103,6 +103,7 @@ public class HomeNetworkEventsSettings extends SettingsPreferenceFragment implem
         mHomeNetworks.setOnPreferenceChangeListener(this);
 
         mHomeConnectActions = (OmniActionsListPreference) findPreference(HOME_CONNECT_ACTIONS);
+        mHomeConnectActions.loadActions(R.xml.omni_actions);
         mHomeConnectActions.setEnabled(is_set);
         value = getPrefs().getString(HOME_CONNECT_ACTIONS, null);
         valueList = new ArrayList<String>();
@@ -117,6 +118,7 @@ public class HomeNetworkEventsSettings extends SettingsPreferenceFragment implem
         mHomeConnectActions.setOnPreferenceChangeListener(this);
 
         mHomeDisconnectActions = (OmniActionsListPreference) findPreference(HOME_DISCONNECT_ACTIONS);
+        mHomeDisconnectActions.loadActions(R.xml.omni_actions);
         mHomeDisconnectActions.setEnabled(is_set);
         value = getPrefs().getString(HOME_DISCONNECT_ACTIONS, null);
         valueList = new ArrayList<String>();

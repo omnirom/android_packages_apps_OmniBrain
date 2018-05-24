@@ -37,7 +37,7 @@
             android:persistent="false"
             android:summary="@string/category_media_player_info_title" />
 
-        <org.omnirom.omnigears.preference.AppMultiSelectListPreference
+        <org.omnirom.omnilib.preference.AppMultiSelectListPreference
             android:dependency="event_service_enabled"
             android:icon="@drawable/ic_settings_bluetooth"
             android:key="bt_a2dp_connect_app_string"
@@ -45,13 +45,13 @@
             android:summary="@string/bt_a2dp_connect_app_list_summary"
             android:title="@string/bt_a2dp_connect_app_list_title" />
 
-        <org.omnirom.omnigears.preference.ScrollAppsViewPreference
+        <org.omnirom.omnilib.preference.ScrollAppsViewPreference
             android:dependency="event_service_enabled"
             android:key="a2dp_app_list"
             android:persistent="false"
             android:selectable="false" />
 
-        <org.omnirom.omnigears.preference.AppMultiSelectListPreference
+        <org.omnirom.omnilib.preference.AppMultiSelectListPreference
             android:dependency="event_service_enabled"
             android:icon="@drawable/ic_headset_24dp"
             android:key="headset_connect_app_string"
@@ -59,7 +59,7 @@
             android:summary="@string/headset_connect_app_list_summary"
             android:title="@string/headset_connect_app_list_title" />
 
-        <org.omnirom.omnigears.preference.ScrollAppsViewPreference
+        <org.omnirom.omnilib.preference.ScrollAppsViewPreference
             android:dependency="event_service_enabled"
             android:key="headset_app_list"
             android:persistent="false"
@@ -86,7 +86,7 @@
             android:persistent="false"
             android:title="@string/media_player_autostart_title" />
 
-        <org.omnirom.omnigears.preference.SeekBarPreference
+        <org.omnirom.omnilib.preference.SeekBarPreference
             android:dependency="event_service_enabled"
             android:key="app_chooser_timeout"
             android:max="60"
@@ -104,13 +104,13 @@
             android:persistent="false"
             android:title="@string/app_chooser_position_title" />
 
-        <org.omnirom.omnigears.preference.SeekBarPreference
+        <org.omnirom.omnilib.preference.SeekBarPreference
             android:dependency="event_service_enabled"
             android:key="wired_events_threshold"
             android:max="6"
             android:persistent="false"
-            android:summary="@string/wired_events_threshold_summary"
             android:title="@string/wired_events_threshold_title"
+            android:summary="@string/wired_events_threshold_summary"
             settings:min="0"
             settings:unitsLeft=""
             settings:unitsRight="@string/unit_sec" />
@@ -138,7 +138,7 @@
             android:persistent="false"
             android:fragment="org.omnirom.omnibrain.WorkNetworkEventsSettings" />
 
-        <org.omnirom.omnigears.preference.SeekBarPreference
+        <org.omnirom.omnilib.preference.SeekBarPreference
             android:dependency="event_service_enabled"
             android:icon="@drawable/ic_settings_wireless"
             android:key="disable_wifi_threshold"

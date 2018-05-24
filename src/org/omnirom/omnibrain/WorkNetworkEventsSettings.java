@@ -27,13 +27,13 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.text.TextUtils;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.settings.R;
+import org.omnirom.omnibrain.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import org.omnirom.omnigears.preference.OmniActionsListPreference;
-import org.omnirom.omnigears.preference.WifiSelectListPreference;
+import org.omnirom.omnilib.preference.OmniActionsListPreference;
+import org.omnirom.omnilib.preference.WifiSelectListPreference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -104,6 +104,7 @@ public class WorkNetworkEventsSettings extends SettingsPreferenceFragment implem
         mWorkNetworks.setOnPreferenceChangeListener(this);
 
         mWorkConnectActions = (OmniActionsListPreference) findPreference(WORK_CONNECT_ACTIONS);
+        mWorkConnectActions.loadActions(R.xml.omni_actions);
         mWorkConnectActions.setEnabled(is_set);
         value = getPrefs().getString(WORK_CONNECT_ACTIONS, null);
         valueList = new ArrayList<String>();
@@ -118,6 +119,7 @@ public class WorkNetworkEventsSettings extends SettingsPreferenceFragment implem
         mWorkConnectActions.setOnPreferenceChangeListener(this);
 
         mWorkDisconnectActions = (OmniActionsListPreference) findPreference(WORK_DISCONNECT_ACTIONS);
+        mWorkDisconnectActions.loadActions(R.xml.omni_actions);
         mWorkDisconnectActions.setEnabled(is_set);
         value = getPrefs().getString(WORK_DISCONNECT_ACTIONS, null);
         valueList = new ArrayList<String>();
