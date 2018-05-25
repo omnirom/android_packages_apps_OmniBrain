@@ -18,8 +18,6 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
-    android-support-v4 \
-    android-support-v13 \
     android-support-v7-preference \
     android-support-v14-preference
 
@@ -29,8 +27,7 @@ LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
 
 LOCAL_AAPT_FLAGS := --auto-add-overlay \
     --extra-packages android.support.v7.preference \
-    --extra-packages android.support.v14.preference \
-    --extra-packages android.support.v17.preference
+    --extra-packages android.support.v14.preference
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
 
