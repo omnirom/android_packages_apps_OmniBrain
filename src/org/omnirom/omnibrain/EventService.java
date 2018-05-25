@@ -64,6 +64,7 @@ import android.widget.LinearLayout;
 import org.omnirom.omnibrain.R;
 import org.omnirom.omnilib.actions.OmniAction;
 import org.omnirom.omnilib.actions.OmniActionsInflate;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -111,8 +112,8 @@ public class EventService extends Service {
             try {
                 if (DEBUG) Log.d(TAG, "onReceive " + action);
 
-                boolean disableIfMusicActive = getPrefs(context).getBoolean(OmniBrainActivity.EVENT_MUSIC_ACTIVE, true);
-                boolean autoRun = getPrefs(context).getBoolean(OmniBrainActivity.EVENT_AUTORUN_SINGLE, true);
+                boolean disableIfMusicActive = getPrefs(context).getBoolean(EventServiceSettings.EVENT_MUSIC_ACTIVE, true);
+                boolean autoRun = getPrefs(context).getBoolean(EventServiceSettings.EVENT_AUTORUN_SINGLE, true);
 
                 switch (action) {
                     case BluetoothAdapter.ACTION_STATE_CHANGED:
@@ -128,7 +129,7 @@ public class EventService extends Service {
                             if (DEBUG) Log.d(TAG, "BluetoothProfile.STATE_CONNECTED = true");
 
                             if (!(disableIfMusicActive && isMusicActive())) {
-                                appList = getAvailableActionList(OmniBrainActivity.EVENT_A2DP_CONNECT);
+                                appList = getAvailableActionList(EventServiceSettings.EVENT_A2DP_CONNECT);
                                 if (appList.size() != 0) {
                                     if (autoRun && appList.size() == 1) {
                                         openApp(appList.iterator().next(), context);
@@ -144,7 +145,7 @@ public class EventService extends Service {
                         break;
                     case AudioManager.ACTION_HEADSET_PLUG:
                         boolean useHeadset = intent.getIntExtra("state", 0) == 1;
-                        final int threshold = getPrefs(context).getInt(OmniBrainActivity.WIRED_EVENTS_THRESHOLD, 0);
+                        final int threshold = getPrefs(context).getInt(EventServiceSettings.WIRED_EVENTS_THRESHOLD, 0);
 
                         if (useHeadset && !mWiredHeadsetConnected) {
                             if (mLastUnplugEventTimestamp != 0) {
@@ -159,7 +160,7 @@ public class EventService extends Service {
                             if (DEBUG) Log.d(TAG, "AudioManager.ACTION_HEADSET_PLUG = true");
 
                             if (!(disableIfMusicActive && isMusicActive())) {
-                                appList = getAvailableActionList(OmniBrainActivity.EVENT_WIRED_HEADSET_CONNECT);
+                                appList = getAvailableActionList(EventServiceSettings.EVENT_WIRED_HEADSET_CONNECT);
                                 if (appList.size() != 0) {
                                     if (autoRun && appList.size() == 1) {
                                         openApp(appList.iterator().next(), context);
@@ -225,7 +226,7 @@ public class EventService extends Service {
     }
 
     private void shouldDisableWIFI(Context context) {
-        int timeout = getPrefs(context).getInt(OmniBrainActivity.DISABLE_WIFI_THRESHOLD, 0);
+        int timeout = getPrefs(context).getInt(EventServiceSettings.DISABLE_WIFI_THRESHOLD, 0);
         if ((timeout > 0) && !mDisableWifiIsRunning) {
             if (DEBUG) Log.d(TAG, "DISABLE_WIFI_THRESHOLD true");
             mDisableWifiIsRunning = true;
@@ -371,7 +372,7 @@ public class EventService extends Service {
             });
 
             // Position and close icon
-            chooserPosition = getPrefs(context).getInt(OmniBrainActivity.APP_CHOOSER_POSITION, LEFT);
+            chooserPosition = getPrefs(context).getInt(EventServiceSettings.APP_CHOOSER_POSITION, LEFT);
             if (chooserPosition == LEFT) {
                 params.gravity = Gravity.CENTER_VERTICAL | Gravity.LEFT;
                 ((ImageView) close.findViewById(R.id.appIcon)).setImageResource(R.drawable.ic_chevron_left);
@@ -385,7 +386,7 @@ public class EventService extends Service {
             mWindowManager.addView(mFloatingWidget, params);
             slideAnimation(true);
 
-            final int timeout = getPrefs(context).getInt(OmniBrainActivity.APP_CHOOSER_TIMEOUT, 15);
+            final int timeout = getPrefs(context).getInt(EventServiceSettings.APP_CHOOSER_TIMEOUT, 15);
             if (timeout > 0) {
                 mHandler.postDelayed(mCloseRunnable, timeout * 1000);
             }
@@ -395,7 +396,7 @@ public class EventService extends Service {
     private void openApp(String app_uri, Context context) {
         try {
             startActivityAsUser(createIntent(app_uri), UserHandle.CURRENT);
-            if (getPrefs(context).getBoolean(OmniBrainActivity.EVENT_MEDIA_PLAYER_START, false)) {
+            if (getPrefs(context).getBoolean(EventServiceSettings.EVENT_MEDIA_PLAYER_START, false)) {
                 mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -506,7 +507,7 @@ public class EventService extends Service {
     }
 
     private SharedPreferences getPrefs(Context context) {
-        return context.getSharedPreferences(OmniBrainActivity.EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        return context.getSharedPreferences(EventServiceSettings.EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
     }
 
     private int getOverlayWidth(Context context) {

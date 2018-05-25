@@ -17,12 +17,6 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-ifeq ($(TARGET_BUILD_APPS),)
-support_library_root_dir := frameworks/support
-else
-support_library_root_dir := prebuilts/sdk/current/support
-endif
-
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v4 \
     android-support-v13 \
@@ -40,7 +34,6 @@ LOCAL_AAPT_FLAGS := --auto-add-overlay \
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
 
-include frameworks/base/packages/SettingsLib/common.mk
 include packages/apps/OmniLib/common.mk
 
 LOCAL_PACKAGE_NAME := OmniBrain
@@ -48,4 +41,5 @@ LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_MODULE_TAGS := optional
 LOCAL_MIN_SDK_VERSION := 27
+LOCAL_USE_AAPT2 := true
 include $(BUILD_PACKAGE)

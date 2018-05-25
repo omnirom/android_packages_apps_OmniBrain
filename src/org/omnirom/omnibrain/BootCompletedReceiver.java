@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
-*/
+ */
 package org.omnirom.omnibrain;
 
 import android.content.BroadcastReceiver;
@@ -28,12 +28,12 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = true;
 
     private SharedPreferences getPrefs(Context context) {
-        return context.getSharedPreferences(OmniBrainActivity.EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        return context.getSharedPreferences(EventServiceSettings.EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
     }
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (getPrefs(context).getBoolean(OmniBrainActivity.EVENT_SERVICE_ENABLED, false)) {
+        if (getPrefs(context).getBoolean(EventServiceSettings.EVENT_SERVICE_ENABLED, false)) {
             if (DEBUG) Log.d(TAG, "onReceive " + intent.getAction());
             context.startService(new Intent(context, EventService.class));
         }

@@ -52,6 +52,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="work_connect_actions_title">When connect to Work</string>
     <string name="work_disconnect_actions_title">When disconnect from Work</string>
     <string name="unit_minutes">min</string>
+    <string name="unit_sec">sec</string>
 
     <!-- Omni actions -->
     <string name="action_location_off_title">Location off</string>

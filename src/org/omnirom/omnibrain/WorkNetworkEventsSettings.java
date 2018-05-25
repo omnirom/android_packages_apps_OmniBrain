@@ -21,26 +21,23 @@ package org.omnirom.omnibrain;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.SearchIndexableResource;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.text.TextUtils;
 
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import org.omnirom.omnibrain.R;
-import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settings.search.Indexable;
 
 import org.omnirom.omnilib.preference.OmniActionsListPreference;
 import org.omnirom.omnilib.preference.WifiSelectListPreference;
+
+import android.preference.PreferenceFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-public class WorkNetworkEventsSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
+public class WorkNetworkEventsSettings extends PreferenceFragment implements OnPreferenceChangeListener {
     public static final String EVENTS_PREFERENCES_NAME = "event_service";
 
 
@@ -48,36 +45,10 @@ public class WorkNetworkEventsSettings extends SettingsPreferenceFragment implem
     public static final String WORK_CONNECT_ACTIONS = "work_connect_actions";
     public static final String WORK_DISCONNECT_ACTIONS = "work_disconnect_actions";
 
-    public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider() {
-                @Override
-                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
-                                                                            boolean enabled) {
-                    ArrayList<SearchIndexableResource> result =
-                            new ArrayList<SearchIndexableResource>();
-
-                    SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.work_network_settings;
-                    result.add(sir);
-
-                    return result;
-                }
-
-                @Override
-                public List<String> getNonIndexableKeys(Context context) {
-                    ArrayList<String> result = new ArrayList<String>();
-                    return result;
-                }
-            };
 
     private WifiSelectListPreference mWorkNetworks;
     private OmniActionsListPreference mWorkConnectActions;
     private OmniActionsListPreference mWorkDisconnectActions;
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.OMNI_SETTINGS;
-    }
 
     private SharedPreferences getPrefs() {
         return getActivity().getSharedPreferences(EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
