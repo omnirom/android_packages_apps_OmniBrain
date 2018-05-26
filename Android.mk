@@ -19,14 +19,18 @@ include $(CLEAR_VARS)
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v7-preference \
+    android-support-v7-cardview \
+    android-support-v7-recyclerview \
     android-support-v14-preference
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
     frameworks/support/v7/preference/res \
+    frameworks/support/v7/recyclerview/res \
     frameworks/support/v14/preference/res
 
 LOCAL_AAPT_FLAGS := --auto-add-overlay \
     --extra-packages android.support.v7.preference \
+    --extra-packages android.support.v7.recyclerview \
     --extra-packages android.support.v14.preference
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
