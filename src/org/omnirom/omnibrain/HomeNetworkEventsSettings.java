@@ -24,7 +24,7 @@ import android.os.Bundle;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.text.TextUtils;
-import android.preference.PreferenceFragment;
+import android.support.v14.preference.PreferenceFragment;
 
 import org.omnirom.omnibrain.R;
 
@@ -52,8 +52,7 @@ public class HomeNetworkEventsSettings extends PreferenceFragment implements OnP
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.home_network_settings);
 
         List<String> valueList = new ArrayList<String>();

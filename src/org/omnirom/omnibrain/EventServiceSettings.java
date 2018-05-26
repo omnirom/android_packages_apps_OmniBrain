@@ -29,7 +29,7 @@ import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.text.TextUtils;
-import android.preference.PreferenceFragment;
+import android.support.v14.preference.PreferenceFragment;
 
 import org.omnirom.omnibrain.R;
 
@@ -80,8 +80,7 @@ public class EventServiceSettings extends PreferenceFragment implements OnPrefer
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.event_service_settings);
 
         mEnable = (SwitchPreference) findPreference(EVENT_SERVICE_ENABLED);

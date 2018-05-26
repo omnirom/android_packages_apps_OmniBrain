@@ -30,7 +30,7 @@ import org.omnirom.omnibrain.R;
 import org.omnirom.omnilib.preference.OmniActionsListPreference;
 import org.omnirom.omnilib.preference.WifiSelectListPreference;
 
-import android.preference.PreferenceFragment;
+import android.support.v14.preference.PreferenceFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -55,8 +55,7 @@ public class WorkNetworkEventsSettings extends PreferenceFragment implements OnP
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.work_network_settings);
 
         List<String> valueList = new ArrayList<String>();
