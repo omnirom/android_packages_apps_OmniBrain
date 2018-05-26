@@ -38,7 +38,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         android:icon="@drawable/omnirom_logo"
         android:theme="@style/Theme.OmniBrain" >
         <activity
-            android:name=".OmniBrainActivity"
+            android:name="org.omnirom.omnibrain.OmniBrainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
