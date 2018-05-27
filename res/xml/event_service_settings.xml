@@ -16,21 +16,21 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/lib/res/org.omnirom.omnilib"
     android:key="event_service_settings"
     android:title="@string/event_service_settings_title">
 
-    <SwitchPreference
+    <android.support.v14.preference.SwitchPreference
         android:key="event_service_enabled"
         android:persistent="false"
         android:title="@string/event_service_enabled_title" />
 
-    <PreferenceCategory
+    <android.support.v7.preference.PreferenceCategory
         android:key="category_media_player"
         android:title="@string/category_media_player_title">
 
-        <Preference
+        <android.support.v7.preference.Preference
             android:dependency="event_service_enabled"
             android:icon="@drawable/ic_info_outline_24dp"
             android:key="category_media_player_info"
@@ -65,7 +65,7 @@
             android:persistent="false"
             android:selectable="false" />
 
-        <SwitchPreference
+        <android.support.v14.preference.SwitchPreference
             android:defaultValue="true"
             android:dependency="event_service_enabled"
             android:key="autorun_single_app"
@@ -73,14 +73,14 @@
             android:summary="@string/autorun_single_app_summary"
             android:title="@string/autorun_single_app_title" />
 
-        <SwitchPreference
+        <android.support.v14.preference.SwitchPreference
             android:defaultValue="true"
             android:dependency="event_service_enabled"
             android:key="media_player_music_active"
             android:persistent="false"
             android:title="@string/media_player_music_active_title" />
 
-        <SwitchPreference
+        <android.support.v14.preference.SwitchPreference
             android:dependency="event_service_enabled"
             android:key="media_player_autostart"
             android:persistent="false"
@@ -96,7 +96,7 @@
             settings:unitsLeft=""
             settings:unitsRight="@string/unit_sec" />
 
-        <ListPreference
+        <android.support.v7.preference.ListPreference
             android:dependency="event_service_enabled"
             android:entries="@array/app_chooser_position_entries"
             android:entryValues="@array/app_chooser_position_values"
@@ -114,13 +114,13 @@
             settings:min="0"
             settings:unitsLeft=""
             settings:unitsRight="@string/unit_sec" />
-    </PreferenceCategory>
+    </android.support.v7.preference.PreferenceCategory>
 
-    <PreferenceCategory
+    <android.support.v7.preference.PreferenceCategory
         android:key="category_network"
         android:title="@string/category_wifi_title">
 
-        <Preference
+        <android.support.v7.preference.Preference
             android:key="home_network_events"
             android:icon="@drawable/ic_settings_home"
             android:dependency="event_service_enabled"
@@ -129,7 +129,7 @@
             android:persistent="false"
             android:fragment="org.omnirom.omnibrain.HomeNetworkEventsSettings" />
 
-        <Preference
+        <android.support.v7.preference.Preference
             android:key="work_network_events"
             android:icon="@drawable/ic_work_24dp"
             android:dependency="event_service_enabled"
@@ -149,5 +149,5 @@
             settings:min="0"
             settings:unitsLeft=""
             settings:unitsRight="@string/unit_minutes" />
-    </PreferenceCategory>
-</PreferenceScreen>
+    </android.support.v7.preference.PreferenceCategory>
+</android.support.v7.preference.PreferenceScreen>

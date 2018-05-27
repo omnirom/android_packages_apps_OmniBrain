@@ -24,11 +24,6 @@ public class OmniBrainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .replace(android.R.id.content, new EventServiceSettings())
-                    .commit();
-        }
+        setContentView(R.layout.omnibrainactivity_layout);
     }
 }
