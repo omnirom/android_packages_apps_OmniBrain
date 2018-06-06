@@ -17,6 +17,11 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
+LOCAL_PACKAGE_NAME := OmniBrain
+LOCAL_CERTIFICATE := platform
+LOCAL_PRIVILEGED_MODULE := true
+LOCAL_MODULE_TAGS := optional
+LOCAL_MIN_SDK_VERSION := 27
 LOCAL_USE_AAPT2 := true
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
@@ -39,9 +44,4 @@ LOCAL_SRC_FILES := $(call all-java-files-under, src)
 
 include packages/apps/OmniLib/common.mk
 
-LOCAL_PACKAGE_NAME := OmniBrain
-LOCAL_CERTIFICATE := platform
-LOCAL_PRIVILEGED_MODULE := true
-LOCAL_MODULE_TAGS := optional
-LOCAL_MIN_SDK_VERSION := 27
 include $(BUILD_PACKAGE)
