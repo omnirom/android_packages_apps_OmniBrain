@@ -17,7 +17,7 @@
  -->
 
 <android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/lib/res/org.omnirom.omnilib"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:key="event_service_settings"
     android:title="@string/event_service_settings_title">
 
@@ -93,7 +93,6 @@
             android:persistent="false"
             android:title="@string/app_chooser_timeout_title"
             settings:min="0"
-            settings:unitsLeft=""
             settings:unitsRight="@string/unit_sec" />
 
         <android.support.v7.preference.ListPreference
@@ -112,7 +111,6 @@
             android:title="@string/wired_events_threshold_title"
             android:summary="@string/wired_events_threshold_summary"
             settings:min="0"
-            settings:unitsLeft=""
             settings:unitsRight="@string/unit_sec" />
     </android.support.v7.preference.PreferenceCategory>
 
@@ -147,7 +145,6 @@
             android:summary="@string/disable_wifi_threshold_summary"
             android:title="@string/disable_wifi_threshold_title"
             settings:min="0"
-            settings:unitsLeft=""
             settings:unitsRight="@string/unit_minutes" />
     </android.support.v7.preference.PreferenceCategory>
 </android.support.v7.preference.PreferenceScreen>

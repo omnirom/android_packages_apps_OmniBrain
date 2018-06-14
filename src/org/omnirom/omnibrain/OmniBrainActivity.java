@@ -17,13 +17,34 @@
  */
 package org.omnirom.omnibrain;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.app.Activity;
 
 public class OmniBrainActivity extends Activity {
+    private FragmentManager mFragmentManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.omnibrainactivity_layout);
+
+        mFragmentManager = getFragmentManager();
+
+        // Do not overlapping fragments.
+        if (savedInstanceState == null) {
+            mFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, new EventServiceSettings())
+                    .commit();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mFragmentManager.getBackStackEntryCount() == 0) {
+            super.onBackPressed();
+        } else {
+            mFragmentManager.popBackStack();
+        }
     }
 }
