@@ -30,13 +30,14 @@ import org.omnirom.omnibrain.R;
 
 import org.omnirom.omnilib.preference.OmniActionsListPreference;
 import org.omnirom.omnilib.preference.WifiSelectListPreference;
+import org.omnirom.omnilib.fragments.OmniLibPreferenceFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-public class HomeNetworkEventsSettings extends PreferenceFragment implements OnPreferenceChangeListener {
+public class HomeNetworkEventsSettings extends OmniLibPreferenceFragment implements OnPreferenceChangeListener {
     public static final String EVENTS_PREFERENCES_NAME = "event_service";
 
     public static final String HOME_TAGGED_NETWORKS = "home_tagged_networks";

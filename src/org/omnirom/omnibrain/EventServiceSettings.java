@@ -29,13 +29,13 @@ import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.text.TextUtils;
-import android.support.v14.preference.PreferenceFragment;
 
 import org.omnirom.omnibrain.R;
 
 import org.omnirom.omnilib.preference.AppMultiSelectListPreference;
 import org.omnirom.omnilib.preference.ScrollAppsViewPreference;
 import org.omnirom.omnilib.preference.SeekBarPreference;
+import org.omnirom.omnilib.fragments.OmniLibPreferenceFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,7 +43,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-public class EventServiceSettings extends PreferenceFragment implements OnPreferenceChangeListener {
+public class EventServiceSettings extends OmniLibPreferenceFragment implements OnPreferenceChangeListener {
     public static final String EVENTS_PREFERENCES_NAME = "event_service";
 
     public static final String EVENT_A2DP_CONNECT = "bt_a2dp_connect_app_string";

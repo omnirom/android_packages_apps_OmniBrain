@@ -29,6 +29,7 @@ import org.omnirom.omnibrain.R;
 
 import org.omnirom.omnilib.preference.OmniActionsListPreference;
 import org.omnirom.omnilib.preference.WifiSelectListPreference;
+import org.omnirom.omnilib.fragments.OmniLibPreferenceFragment;
 
 import android.support.v14.preference.PreferenceFragment;
 
@@ -37,7 +38,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-public class WorkNetworkEventsSettings extends PreferenceFragment implements OnPreferenceChangeListener {
+public class WorkNetworkEventsSettings extends OmniLibPreferenceFragment implements OnPreferenceChangeListener {
     public static final String EVENTS_PREFERENCES_NAME = "event_service";
 
 

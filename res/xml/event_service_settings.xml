@@ -30,13 +30,6 @@
         android:key="category_media_player"
         android:title="@string/category_media_player_title">
 
-        <android.support.v7.preference.Preference
-            android:dependency="event_service_enabled"
-            android:icon="@drawable/ic_info_outline_24dp"
-            android:key="category_media_player_info"
-            android:persistent="false"
-            android:summary="@string/category_media_player_info_title" />
-
         <org.omnirom.omnilib.preference.AppMultiSelectListPreference
             android:dependency="event_service_enabled"
             android:icon="@drawable/ic_settings_bluetooth"

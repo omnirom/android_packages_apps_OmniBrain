@@ -21,6 +21,7 @@ import android.app.FragmentManager;
 import android.os.Bundle;
 import android.app.Activity;
 
+
 public class OmniBrainActivity extends Activity {
     private FragmentManager mFragmentManager;
 
@@ -34,7 +35,7 @@ public class OmniBrainActivity extends Activity {
         // Do not overlapping fragments.
         if (savedInstanceState == null) {
             mFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, new EventServiceSettings())
+                    .replace(R.id.content_frame, new EventServiceSettings())
                     .commit();
         }
     }
