@@ -47,14 +47,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <service
-            android:exported="false"
-            android:enabled="true"
-            android:name=".EventService" />
-        <receiver android:name=".BootCompletedReceiver">
+
+        <service android:name="org.omnirom.omnibrain.EventService" />
+
+        <receiver android:name="org.omnirom.omnibrain.BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
     </application>
