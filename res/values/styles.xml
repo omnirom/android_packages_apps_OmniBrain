@@ -18,7 +18,28 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <style name="Theme.OmniBrain" parent="@android:style/Theme.DeviceDefault.Settings">
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+
+    <style name="Theme.SettingsBase" parent="@android:style/Theme.DeviceDefault.Settings" />
+
+    <style name="Theme.OmniBrain" parent="Theme.SettingsBase">
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.SettingsBase</item>
+        <item name="android:listPreferredItemHeight">72dip</item>
+
+        <!-- Redefine the ActionBar style for contentInsetStart -->
+        <item name="android:actionBarStyle">@style/Theme.ActionBar</item>
+
+        <!-- For all Alert Dialogs -->
+        <item name="android:alertDialogTheme">@style/Theme.AlertDialog</item>
+    </style>
+
+    <style name="Theme.AlertDialog" parent="@*android:style/Theme.DeviceDefault.Settings.Dialog.Alert">
+        <item name="android:windowSoftInputMode">adjustResize</item>
+
+        <!-- Redefine the ActionBar style for contentInsetStart -->
+        <item name="android:actionBarStyle">@style/Theme.ActionBar</item>
+    </style>
+
+    <style name="Theme.ActionBar" parent="@android:style/Widget.Material.ActionBar.Solid">
+        <item name="android:contentInsetStart">@dimen/actionbar_contentInsetStart</item>
     </style>
 </resources>

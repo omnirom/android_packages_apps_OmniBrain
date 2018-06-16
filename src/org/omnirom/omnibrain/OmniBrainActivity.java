@@ -20,9 +20,12 @@ package org.omnirom.omnibrain;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v14.preference.PreferenceFragment;
+import android.support.v7.preference.Preference;
 
 
-public class OmniBrainActivity extends Activity {
+public class OmniBrainActivity extends Activity implements
+        PreferenceFragment.OnPreferenceStartFragmentCallback {
     private FragmentManager mFragmentManager;
 
     @Override
@@ -38,6 +41,24 @@ public class OmniBrainActivity extends Activity {
                     .replace(R.id.content_frame, new EventServiceSettings())
                     .commit();
         }
+    }
+
+    public boolean onPreferenceStartFragment(PreferenceFragment caller, Preference pref){
+        switch(pref.getFragment()){
+            case "org.omnirom.omnibrain.HomeNetworkEventsSettings":
+                mFragmentManager.beginTransaction()
+                    .addToBackStack(null)
+                    .replace(R.id.content_frame, new HomeNetworkEventsSettings())
+                    .commit();
+                break;
+            case "org.omnirom.omnibrain.WorkNetworkEventsSettings":
+                mFragmentManager.beginTransaction()
+                    .addToBackStack(null)
+                    .replace(R.id.content_frame, new WorkNetworkEventsSettings())
+                    .commit();
+                break;
+        }
+        return true;
     }
 
     @Override

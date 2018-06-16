@@ -101,8 +101,8 @@
             android:key="wired_events_threshold"
             android:max="6"
             android:persistent="false"
-            android:title="@string/wired_events_threshold_title"
             android:summary="@string/wired_events_threshold_summary"
+            android:title="@string/wired_events_threshold_title"
             settings:min="0"
             settings:unitsRight="@string/unit_sec" />
     </android.support.v7.preference.PreferenceCategory>
@@ -112,22 +112,20 @@
         android:title="@string/category_wifi_title">
 
         <android.support.v7.preference.Preference
-            android:key="home_network_events"
-            android:icon="@drawable/ic_settings_home"
             android:dependency="event_service_enabled"
-            android:title="@string/home_networks_title"
+            android:fragment="org.omnirom.omnibrain.HomeNetworkEventsSettings"
+            android:icon="@drawable/ic_settings_home"
+            android:key="home_network_events"
             android:summary="@string/home_network_events_summary"
-            android:persistent="false"
-            android:fragment="org.omnirom.omnibrain.HomeNetworkEventsSettings" />
+            android:title="@string/home_networks_title" />
 
         <android.support.v7.preference.Preference
-            android:key="work_network_events"
-            android:icon="@drawable/ic_work_24dp"
             android:dependency="event_service_enabled"
-            android:title="@string/work_networks_title"
+            android:fragment="org.omnirom.omnibrain.WorkNetworkEventsSettings"
+            android:icon="@drawable/ic_work_24dp"
+            android:key="work_network_events"
             android:summary="@string/work_network_events_summary"
-            android:persistent="false"
-            android:fragment="org.omnirom.omnibrain.WorkNetworkEventsSettings" />
+            android:title="@string/work_networks_title" />
 
         <org.omnirom.omnilib.preference.SeekBarPreference
             android:dependency="event_service_enabled"

@@ -18,4 +18,6 @@
 <resources>
     <dimen name="floating_widget_view_padding">10dp</dimen>
     <dimen name="floating_widget_window_padding">10dp</dimen>
+    <dimen name="settings_side_margin">0dip</dimen>
+    <dimen name="actionbar_contentInsetStart">16dp</dimen>
 </resources>
