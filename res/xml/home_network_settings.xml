@@ -22,16 +22,13 @@
 
     <org.omnirom.omnilib.preference.WifiSelectListPreference
         android:key="home_tagged_networks"
-        android:persistent="false"
         android:title="@string/tagged_networks_title" />
 
     <org.omnirom.omnilib.preference.OmniActionsListPreference
         android:key="home_connect_actions"
-        android:persistent="false"
         android:title="@string/home_connect_actions_title" />
 
     <org.omnirom.omnilib.preference.OmniActionsListPreference
         android:key="home_disconnect_actions"
-        android:persistent="false"
         android:title="@string/home_disconnect_actions_title" />
 </android.support.v7.preference.PreferenceScreen>
