@@ -33,10 +33,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.NETWORK_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="false"
@@ -53,7 +54,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             </intent-filter>
         </activity>
 
-        <service android:name="org.omnirom.omnibrain.EventService" />
+        <service
+            android:exported="false"
+            android:enabled="true"
+            android:name="org.omnirom.omnibrain.EventService" />
 
         <receiver android:name="org.omnirom.omnibrain.BootCompletedReceiver">
             <intent-filter>
