@@ -16,7 +16,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<actions xmlns:android="http://schemas.android.com/apk/res/android">
+<actions>
     <action
         key="action_location_off"
         title="@string/action_location_off_title"

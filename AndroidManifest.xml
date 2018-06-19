@@ -38,6 +38,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
 
     <application
         android:persistent="true"
