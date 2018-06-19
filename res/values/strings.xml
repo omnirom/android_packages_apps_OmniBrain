@@ -28,9 +28,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="media_player_autostart_title">Send media play event after start</string>
     <string name="media_player_music_active_title">Do not start event on playback</string>
     <string name="autorun_single_app_title">Autorun single app</string>
-    <string name="autorun_single_app_summary">Dont show app selection dialog</string>
-    <string name="bt_a2dp_connect_app_list_summary">App(s) to be listed when an A2DP event is triggered, such as connecting a Bluetooth headset</string>
-    <string name="headset_connect_app_list_summary">App(s) to be listed when a wired headset is connected</string>
+    <string name="autorun_single_app_summary">Don\'t show app selection dialog</string>
+    <string name="bt_a2dp_connect_app_list_summary">Apps to be listed when an A2DP event is triggered, such as connecting a Bluetooth headset</string>
+    <string name="headset_connect_app_list_summary">Apps to be listed when a wired headset is connected</string>
     <string name="app_chooser_left">Left</string>
     <string name="app_chooser_right">Right</string>
     <string name="app_chooser_timeout_title">App chooser dialog timeout</string>
@@ -39,7 +39,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="wired_events_threshold_summary">Ignore headset events if they are within threshold time</string>
     <string name="category_wifi_title">Wi\u2011Fi</string>
     <string name="disable_wifi_threshold_title">Turn off Wi\u2011Fi automatically</string>
-    <string name="disable_wifi_threshold_summary">Deactivate Wi\u2011Fi if, when disconnecting from a network, we do not reconnect after a few minutes</string>
+    <string name="disable_wifi_threshold_summary">Deactivate Wi\u2011Fi if not connected to a network after a few minutes</string>
     <string name="tagged_networks_summary">%1$d networks tagged</string>
     <string name="home_networks_title">Home network</string>
     <string name="tagged_networks_title">Tagged networks</string>
