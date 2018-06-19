@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
-    <string name="app_name" translatable="false">OmniBrain</string>
+    <string name="app_name">Events</string>
     <string name="event_service_settings_title">Events</string>
     <string name="category_media_player_title">Media player</string>
     <string name="bt_a2dp_connect_app_list_title">Bluetooth A2DP connect</string>

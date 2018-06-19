@@ -72,7 +72,7 @@ import java.util.List;
 
 public class EventService extends Service {
     private static final String TAG = "OmniEventService";
-    private static final boolean DEBUG = true;
+    private static final boolean DEBUG = false;
     private static final int ANIM_DURATION = 300;
     private static final int LEFT = 0;
     private static final int RIGHT = 1;
