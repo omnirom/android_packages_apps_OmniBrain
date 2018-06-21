@@ -53,23 +53,38 @@
             android:key="headset_app_list"
             android:selectable="false" />
 
+        <org.omnirom.omnilib.preference.SeekBarPreference
+            android:dependency="event_service_enabled"
+            android:key="wired_events_threshold"
+            android:max="6"
+            android:summary="@string/wired_events_threshold_summary"
+            android:title="@string/wired_events_threshold_title"
+            settings:min="0"
+            settings:unitsRight="@string/unit_sec" />
+
+        <android.support.v14.preference.SwitchPreference
+            android:defaultValue="true"
+            android:dependency="event_service_enabled"
+            android:key="media_player_music_active"
+            android:title="@string/media_player_music_active_title" />º
+
+        <android.support.v14.preference.SwitchPreference
+            android:dependency="event_service_enabled"
+            android:key="media_player_autostart"
+            android:title="@string/media_player_autostart_title" />
+
+    </android.support.v7.preference.PreferenceCategory>
+
+    <android.support.v7.preference.PreferenceCategory
+            android:key="category_app_chooser"
+            android:title="@string/category_app_chooser_title">
+
         <android.support.v14.preference.SwitchPreference
             android:defaultValue="true"
             android:dependency="event_service_enabled"
             android:key="autorun_single_app"
             android:summary="@string/autorun_single_app_summary"
             android:title="@string/autorun_single_app_title" />
-
-        <android.support.v14.preference.SwitchPreference
-            android:defaultValue="true"
-            android:dependency="event_service_enabled"
-            android:key="media_player_music_active"
-            android:title="@string/media_player_music_active_title" />
-
-        <android.support.v14.preference.SwitchPreference
-            android:dependency="event_service_enabled"
-            android:key="media_player_autostart"
-            android:title="@string/media_player_autostart_title" />
 
         <org.omnirom.omnilib.preference.SeekBarPreference
             android:dependency="event_service_enabled"
@@ -86,14 +101,6 @@
             android:key="app_chooser_position"
             android:title="@string/app_chooser_position_title" />
 
-        <org.omnirom.omnilib.preference.SeekBarPreference
-            android:dependency="event_service_enabled"
-            android:key="wired_events_threshold"
-            android:max="6"
-            android:summary="@string/wired_events_threshold_summary"
-            android:title="@string/wired_events_threshold_title"
-            settings:min="0"
-            settings:unitsRight="@string/unit_sec" />
     </android.support.v7.preference.PreferenceCategory>
 
     <android.support.v7.preference.PreferenceCategory
