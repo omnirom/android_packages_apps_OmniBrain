@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1790a478_9921d6a4",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000026
+      },
+      "writtenOn": "2018-06-21T23:29:53Z",
+      "side": 1,
+      "message": "no uppercase IMHO - and there would be enough space to write full Application",
+      "revId": "c274a514a0e49393270655448153a477f3223570",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
