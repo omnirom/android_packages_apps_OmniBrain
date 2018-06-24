@@ -19,25 +19,49 @@
 <actions>
     <action
         key="action_location_sensors_only"
-        title="@string/action_location_sensors_only_title"
         setting="location_mode"
         setting_type="Secure"
+        title="@string/action_location_sensors_only_title"
         value="1"
         value_type="int" />
 
     <action
         key="action_location_battery_saving"
-        title="@string/action_location_battery_saving_title"
         setting="location_mode"
         setting_type="Secure"
+        title="@string/action_location_battery_saving_title"
         value="2"
-        value_type="int"/>
+        value_type="int" />
 
     <action
         key="action_location_high_accuracy"
-        title="@string/action_location_high_accuracy_title"
         setting="location_mode"
         setting_type="Secure"
+        title="@string/action_location_high_accuracy_title"
         value="3"
         value_type="int" />
+
+    <action
+        key="action_dnd_off"
+        runner="org.omnirom.omnibrain.runners.DNDRunner"
+        title="@string/action_dnd_off_title"
+        value="0" />
+
+    <action
+        key="action_dnd_important"
+        runner="org.omnirom.omnibrain.runners.DNDRunner"
+        title="@string/action_dnd_important_title"
+        value="1" />
+
+    <action
+        key="action_dnd_no_interruptions"
+        runner="org.omnirom.omnibrain.runners.DNDRunner"
+        title="@string/action_dnd_no_interruptions_title"
+        value="2" />
+
+    <action
+        key="action_dnd_alarms"
+        runner="org.omnirom.omnibrain.runners.DNDRunner"
+        title="@string/action_dnd_alarms_title"
+        value="3" />
 </actions>

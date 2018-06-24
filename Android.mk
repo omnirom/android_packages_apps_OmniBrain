@@ -24,6 +24,8 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MIN_SDK_VERSION := 27
 LOCAL_USE_AAPT2 := true
 
+LOCAL_PROGUARD_FLAG_FILES := proguard.flags
+
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v7-preference \
     android-support-v7-cardview \
