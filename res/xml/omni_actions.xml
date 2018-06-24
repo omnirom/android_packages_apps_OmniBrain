@@ -48,4 +48,10 @@
         setting_type="Secure"
         value="3"
         value_type="int" />
+
+    <action
+        key="action_dnd_off"
+        title="@string/action_dnd_off_title"
+        runner="org.omnirom.omnibrain.runners.DNDRunner"
+        value="0" />
 </actions>
