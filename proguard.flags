@@ -1,0 +1,5 @@
+# This is a configuration file for ProGuard.
+# http://proguard.sourceforge.net/index.html#manual/usage.html
+
+# Keep all OmniActionRunners in this package, which are used by reflection.
+-keep public class org.omnirom.omnibrain.runners.**

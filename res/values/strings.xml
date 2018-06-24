@@ -60,5 +60,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="action_location_sensors_only_title">Location sensors only</string>
     <string name="action_location_battery_saving_title">Location battery saving</string>
     <string name="action_location_high_accuracy_title">Location high accuracy</string>
+    <string name="action_dnd_off_title">DND off</string>
 
 </resources>
