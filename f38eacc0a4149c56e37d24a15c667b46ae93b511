@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "77f63db0_5d7dc5b1",
+        "filename": "src/org/omnirom/omnibrain/OmniBrainActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000026
+      },
+      "writtenOn": "2018-06-25T11:18:00Z",
+      "side": 1,
+      "message": "note: this works ofc only as long as we dont have more then one depth",
+      "revId": "f38eacc0a4149c56e37d24a15c667b46ae93b511",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
