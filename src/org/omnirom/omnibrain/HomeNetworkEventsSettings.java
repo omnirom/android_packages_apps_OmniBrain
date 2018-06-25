@@ -55,6 +55,7 @@ public class HomeNetworkEventsSettings extends OmniLibPreferenceFragment impleme
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.home_network_settings);
+        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 
         List<String> valueList = new ArrayList<String>();
         mHomeNetworks = (WifiSelectListPreference) findPreference(HOME_TAGGED_NETWORKS);
