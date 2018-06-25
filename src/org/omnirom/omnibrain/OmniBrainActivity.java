@@ -22,7 +22,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.support.v14.preference.PreferenceFragment;
 import android.support.v7.preference.Preference;
-
+import android.view.MenuItem;
 
 public class OmniBrainActivity extends Activity implements
         PreferenceFragment.OnPreferenceStartFragmentCallback {
@@ -50,12 +50,14 @@ public class OmniBrainActivity extends Activity implements
                     .addToBackStack(null)
                     .replace(R.id.content_frame, new HomeNetworkEventsSettings())
                     .commit();
+                setTitle(pref.getTitle());
                 break;
             case "org.omnirom.omnibrain.WorkNetworkEventsSettings":
                 mFragmentManager.beginTransaction()
                     .addToBackStack(null)
                     .replace(R.id.content_frame, new WorkNetworkEventsSettings())
                     .commit();
+                setTitle(pref.getTitle());
                 break;
         }
         return true;
@@ -67,6 +69,16 @@ public class OmniBrainActivity extends Activity implements
             super.onBackPressed();
         } else {
             mFragmentManager.popBackStack();
+            setTitle(getResources().getString(R.string.event_service_settings_title));
         }
+    }
+
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return super.onMenuItemSelected(featureId, item);
     }
 }
