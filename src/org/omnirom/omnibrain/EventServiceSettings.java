@@ -82,6 +82,7 @@ public class EventServiceSettings extends OmniLibPreferenceFragment implements O
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.event_service_settings);
+        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 
         mEnable = (SwitchPreference) findPreference(EVENT_SERVICE_ENABLED);
         mEnable.setChecked(getPrefs().getBoolean(EventServiceSettings.EVENT_SERVICE_ENABLED, false));
