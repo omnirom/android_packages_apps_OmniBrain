@@ -58,6 +58,7 @@ public class WorkNetworkEventsSettings extends OmniLibPreferenceFragment impleme
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.work_network_settings);
+        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 
         List<String> valueList = new ArrayList<String>();
         mWorkNetworks = (WifiSelectListPreference) findPreference(WORK_TAGGED_NETWORKS);
