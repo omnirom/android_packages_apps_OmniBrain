@@ -60,6 +60,7 @@ import android.view.animation.Interpolator;
 import android.view.animation.PathInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.provider.Settings;
 
 import org.omnirom.omnibrain.R;
 import org.omnirom.omnilib.actions.OmniAction;
@@ -176,6 +177,15 @@ public class EventService extends Service {
                         }
                         break;
                     case WifiManager.NETWORK_STATE_CHANGED_ACTION:
+
+                        boolean locationDisabled = Settings.Secure.getInt(context.getContentResolver(),
+                            Settings.Secure.LOCATION_MODE, -1) == 0;
+
+                        if (locationDisabled) {
+                            if (DEBUG) Log.d(TAG, "Location disabled");
+                            break;
+                        }
+
                         if (DEBUG) Log.d(TAG, "WifiManager.NETWORK_STATE_CHANGED_ACTION = true");
 
                         if (mWifiManager.isWifiEnabled()) {
