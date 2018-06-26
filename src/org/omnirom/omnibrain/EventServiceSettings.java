@@ -29,6 +29,7 @@ import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.text.TextUtils;
+import android.provider.Settings;
 
 import org.omnirom.omnibrain.R;
 
@@ -58,6 +59,8 @@ public class EventServiceSettings extends OmniLibPreferenceFragment implements O
     public static final String APP_CHOOSER_POSITION = "app_chooser_position";
     public static final String WIRED_EVENTS_THRESHOLD = "wired_events_threshold";
     public static final String DISABLE_WIFI_THRESHOLD = "disable_wifi_threshold";
+    public static final String HOME_WIFI_PREFERENCE_SCREEN = "home_network_events";
+    public static final String WORK_WIFI_PREFERENCE_SCREEN = "work_network_events";
 
     private AppMultiSelectListPreference mA2DPappSelect;
     private AppMultiSelectListPreference mWiredHeadsetAppSelect;
@@ -74,6 +77,8 @@ public class EventServiceSettings extends OmniLibPreferenceFragment implements O
     private String mServiceRunning;
     private String mServiceStopped;
     private SeekBarPreference mWiredThresholdTimeout;
+    private Preference homeWifi;
+    private Preference workWifi;
 
     private SharedPreferences getPrefs() {
         return getActivity().getSharedPreferences(EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
@@ -112,9 +117,25 @@ public class EventServiceSettings extends OmniLibPreferenceFragment implements O
         mChooserTimeout.setValue(getPrefs().getInt(EventServiceSettings.APP_CHOOSER_TIMEOUT, 15));
         mChooserTimeout.setOnPreferenceChangeListener(this);
 
+        boolean locationDisabled = Settings.Secure.getInt(getActivity().getContentResolver(),
+                            Settings.Secure.LOCATION_MODE, -1) == 0;
+
         mDisableWifi = (SeekBarPreference) findPreference(DISABLE_WIFI_THRESHOLD);
         mDisableWifi.setValue(getPrefs().getInt(EventServiceSettings.DISABLE_WIFI_THRESHOLD, 0));
         mDisableWifi.setOnPreferenceChangeListener(this);
+        mDisableWifi.setEnabled(!locationDisabled);
+
+        homeWifi = findPreference(HOME_WIFI_PREFERENCE_SCREEN);
+        homeWifi.setEnabled(!locationDisabled);
+
+        workWifi = findPreference(WORK_WIFI_PREFERENCE_SCREEN);
+        workWifi.setEnabled(!locationDisabled);
+
+        if (locationDisabled){
+            mDisableWifi.setSummary(R.string.wifi_location_disabled);
+            homeWifi.setSummary(R.string.wifi_location_disabled);
+            workWifi.setSummary(R.string.wifi_location_disabled);
+        }
 
         mWiredThresholdTimeout = (SeekBarPreference) findPreference(WIRED_EVENTS_THRESHOLD);
         mWiredThresholdTimeout.setValue(getPrefs().getInt(EventServiceSettings.WIRED_EVENTS_THRESHOLD, 0));
