@@ -54,6 +54,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="unit_minutes">min</string>
     <string name="unit_sec">sec</string>
     <string name="category_app_chooser_title">Application chooser</string>
+    <string name="wifi_location_disabled">Unavailable because location is turned off</string>
 
     <!-- Omni actions -->
     <string name="action_location_off_title">Location off</string>

@@ -18,14 +18,6 @@
 
 <actions>
     <action
-        key="action_location_off"
-        setting="location_mode"
-        setting_type="Secure"
-        title="@string/action_location_off_title"
-        value="0"
-        value_type="int" />
-
-    <action
         key="action_location_sensors_only"
         setting="location_mode"
         setting_type="Secure"
