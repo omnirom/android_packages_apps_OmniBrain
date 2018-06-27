@@ -16,6 +16,23 @@
       "revId": "222555a56c7ef405901b7539b0165b250c5442eb",
       "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d7515105_ef683dce",
+        "filename": "src/org/omnirom/omnibrain/EventServiceSettings.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000026
+      },
+      "writtenOn": "2018-06-27T23:47:57Z",
+      "side": 1,
+      "message": "you dont need mContext - you can use getActivity()",
+      "revId": "222555a56c7ef405901b7539b0165b250c5442eb",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
     }
   ]
 }
