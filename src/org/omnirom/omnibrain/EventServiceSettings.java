@@ -24,25 +24,22 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.text.TextUtils;
-import android.provider.Settings;
 
-import org.omnirom.omnibrain.R;
-
+import org.omnirom.omnilib.fragments.OmniLibPreferenceFragment;
 import org.omnirom.omnilib.preference.AppMultiSelectListPreference;
 import org.omnirom.omnilib.preference.ScrollAppsViewPreference;
 import org.omnirom.omnilib.preference.SeekBarPreference;
-import org.omnirom.omnilib.fragments.OmniLibPreferenceFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 public class EventServiceSettings extends OmniLibPreferenceFragment implements OnPreferenceChangeListener {
     public static final String EVENTS_PREFERENCES_NAME = "event_service";
@@ -61,6 +58,7 @@ public class EventServiceSettings extends OmniLibPreferenceFragment implements O
     public static final String DISABLE_WIFI_THRESHOLD = "disable_wifi_threshold";
     public static final String HOME_WIFI_PREFERENCE_SCREEN = "home_network_events";
     public static final String WORK_WIFI_PREFERENCE_SCREEN = "work_network_events";
+    public static final String EVENT_DISCONNECT_HEADSET_OR_A2DP = "event_disconnect_headset_or_a2dp";
 
     private AppMultiSelectListPreference mA2DPappSelect;
     private AppMultiSelectListPreference mWiredHeadsetAppSelect;
@@ -72,6 +70,7 @@ public class EventServiceSettings extends OmniLibPreferenceFragment implements O
     private SwitchPreference mAutorun;
     private SeekBarPreference mChooserTimeout;
     private SeekBarPreference mDisableWifi;
+    private SwitchPreference mDisconnectEvent;
     private ListPreference mChooserPosition;
     private Handler mHandler = new Handler();
     private String mServiceRunning;
@@ -109,6 +108,10 @@ public class EventServiceSettings extends OmniLibPreferenceFragment implements O
         mMusicActive = (SwitchPreference) findPreference(EVENT_MUSIC_ACTIVE);
         mMusicActive.setChecked(getPrefs().getBoolean(EventServiceSettings.EVENT_MUSIC_ACTIVE, false));
         mMusicActive.setOnPreferenceChangeListener(this);
+
+        mDisconnectEvent = (SwitchPreference) findPreference(EVENT_DISCONNECT_HEADSET_OR_A2DP);
+        mDisconnectEvent.setChecked(getPrefs().getBoolean(EventServiceSettings.EVENT_DISCONNECT_HEADSET_OR_A2DP, false));
+        mDisconnectEvent.setOnPreferenceChangeListener(this);
 
         mAutorun = (SwitchPreference) findPreference(EVENT_AUTORUN_SINGLE);
         mAutorun.setChecked(getPrefs().getBoolean(EventServiceSettings.EVENT_AUTORUN_SINGLE, true));
@@ -251,6 +254,10 @@ public class EventServiceSettings extends OmniLibPreferenceFragment implements O
         } else if (preference == mDisableWifi) {
             int value = ((int) newValue);
             getPrefs().edit().putInt(DISABLE_WIFI_THRESHOLD, value).commit();
+            return true;
+        } else if (preference == mDisconnectEvent) {
+            boolean value = ((Boolean) newValue).booleanValue();
+            getPrefs().edit().putBoolean(EVENT_DISCONNECT_HEADSET_OR_A2DP, value).commit();
             return true;
         }
         return false;
