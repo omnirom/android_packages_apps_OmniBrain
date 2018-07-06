@@ -17,6 +17,7 @@
  */
 package org.omnirom.omnibrain;
 
+import android.app.ActivityManager;
 import android.app.ActivityManagerNative;
 import android.app.Service;
 import android.bluetooth.BluetoothA2dp;
@@ -73,7 +74,7 @@ import java.util.List;
 
 public class EventService extends Service {
     private static final String TAG = "OmniEventService";
-    private static final boolean DEBUG = false;
+    private static final boolean DEBUG = true;
     private static final int ANIM_DURATION = 300;
     private static final int LEFT = 0;
     private static final int RIGHT = 1;
@@ -91,6 +92,7 @@ public class EventService extends Service {
     private List<String> appList = null;
     private Handler mHandler = new Handler();
     private String lastSSID = null;
+    private ComponentName runnigApp = null;
     private PackageManager mPm;
     private int chooserPosition;
     private int mOverlayWidth;
@@ -113,8 +115,9 @@ public class EventService extends Service {
             try {
                 if (DEBUG) Log.d(TAG, "onReceive " + action);
 
-                boolean disableIfMusicActive = getPrefs(context).getBoolean(EventServiceSettings.EVENT_MUSIC_ACTIVE, true);
+                boolean disableIfMusicActive = getPrefs(context).getBoolean(EventServiceSettings.EVENT_MUSIC_ACTIVE, false);
                 boolean autoRun = getPrefs(context).getBoolean(EventServiceSettings.EVENT_AUTORUN_SINGLE, true);
+                boolean closeApp = getPrefs(context).getBoolean(EventServiceSettings.EVENT_DISCONNECT_HEADSET_OR_A2DP, false);
 
                 switch (action) {
                     case BluetoothAdapter.ACTION_STATE_CHANGED:
@@ -142,6 +145,9 @@ public class EventService extends Service {
                         } else {
                             mA2DPConnected = false;
                             if (DEBUG) Log.d(TAG, "BluetoothProfile.STATE_CONNECTED = false");
+                            if (closeApp) {
+                                closeRunningApp(context);
+                            }
                         }
                         break;
                     case AudioManager.ACTION_HEADSET_PLUG:
@@ -173,13 +179,16 @@ public class EventService extends Service {
                         } else {
                             mWiredHeadsetConnected = false;
                             if (DEBUG) Log.d(TAG, "AudioManager.ACTION_HEADSET_PLUG = false");
+                            if (closeApp) {
+                                closeRunningApp(context);
+                            }
                             mLastUnplugEventTimestamp = System.currentTimeMillis();
                         }
                         break;
                     case WifiManager.NETWORK_STATE_CHANGED_ACTION:
 
                         boolean locationDisabled = Settings.Secure.getInt(context.getContentResolver(),
-                            Settings.Secure.LOCATION_MODE, -1) == 0;
+                                Settings.Secure.LOCATION_MODE, -1) == 0;
 
                         if (locationDisabled) {
                             if (DEBUG) Log.d(TAG, "Location disabled");
@@ -216,6 +225,32 @@ public class EventService extends Service {
 
     public static boolean isRunning() {
         return mIsRunning;
+    }
+
+    private void closeRunningApp(Context context) {
+        Context mContext = context;
+
+        if (runnigApp != null) {
+            String app = runnigApp.getPackageName();
+            if (DEBUG) Log.d(TAG, "Running app: " + app);
+
+            final ActivityManager am = (ActivityManager) mContext
+                    .getSystemService(Context.ACTIVITY_SERVICE);
+            List<ActivityManager.RecentTaskInfo> mTasks =
+                    am.getRecentTasks(Integer.MAX_VALUE, ActivityManager.RECENT_IGNORE_UNAVAILABLE);
+
+            for (int i = 0; i < mTasks.size(); i++) {
+                String name = mTasks.get(i).baseIntent
+                        .getComponent().getPackageName();
+                if (DEBUG) Log.d(TAG, "Found app: " + name);
+                if (name.equals(app)) {
+                    if (DEBUG) Log.d(TAG, "Closing running app");
+                    am.removeTask(mTasks.get(i).persistentId);
+                }
+            }
+
+            runnigApp = null;
+        }
     }
 
     private String getCurrentSSID() {
@@ -438,12 +473,12 @@ public class EventService extends Service {
     }
 
     private Intent createIntent(String value) {
-        ComponentName componentName = ComponentName.unflattenFromString(value);
+        runnigApp = ComponentName.unflattenFromString(value);
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                 | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
-        intent.setComponent(componentName);
+        intent.setComponent(runnigApp);
         return intent;
     }
 
