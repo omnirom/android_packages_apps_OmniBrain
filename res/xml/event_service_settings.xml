@@ -73,6 +73,11 @@
             android:key="media_player_autostart"
             android:title="@string/media_player_autostart_title" />
 
+        <android.support.v14.preference.SwitchPreference
+            android:dependency="event_service_enabled"
+            android:key="event_disconnect_headset_or_a2dp"
+            android:title="@string/event_disconnect_headset_or_a2dp_title" />
+
     </android.support.v7.preference.PreferenceCategory>
 
     <android.support.v7.preference.PreferenceCategory
