@@ -17,6 +17,11 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
+  <string name="app_name">Évènements</string>
+  <string name="event_service_settings_title">Évènements</string>
+  <string name="category_media_player_title">Lecteur multimédia</string>
+  <string name="app_chooser_left">Gauche</string>
+  <string name="app_chooser_right">Droite</string>
   <string name="unit_sec">sec</string>
   <!-- Omni actions -->
 </resources>

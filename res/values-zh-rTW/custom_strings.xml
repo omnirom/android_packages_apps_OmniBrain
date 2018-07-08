@@ -17,6 +17,47 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
+  <string name="app_name">事件</string>
+  <string name="event_service_settings_title">事件</string>
+  <string name="category_media_player_title">媒體播放器</string>
+  <string name="bt_a2dp_connect_app_list_title">藍芽 A2DP 連接</string>
+  <string name="headset_connect_app_list_title">有線耳機連接</string>
+  <string name="event_service_enabled_title">啟用事件服務</string>
+  <string name="event_service_running">服務正在執行</string>
+  <string name="event_service_stopped">服務未執行</string>
+  <string name="category_media_player_info_title">應用程式選擇器</string>
+  <string name="media_player_autostart_title">啟動應用程式後自動播放</string>
+  <string name="media_player_music_active_title">媒體播放時不啟用事件</string>
+  <string name="autorun_single_app_title">自動執行單個應用程式</string>
+  <string name="autorun_single_app_summary">不顯示應用程式選擇器畫面</string>
+  <string name="bt_a2dp_connect_app_list_summary">當藍芽 A2DP 連接時將應用程序列出以選擇, 例如連接藍芽耳機</string>
+  <string name="headset_connect_app_list_summary">當有線耳機連接時將應用程序列出以選擇</string>
+  <string name="app_chooser_left">左側</string>
+  <string name="app_chooser_right">右側</string>
+  <string name="app_chooser_timeout_title">應用程式選擇器顯示時間</string>
+  <string name="app_chooser_position_title">應用程式選擇器顯示位置</string>
+  <string name="wired_events_threshold_title">有線耳機事件閥值</string>
+  <string name="wired_events_threshold_summary">在閥值時間內忽略耳機事件</string>
+  <string name="category_wifi_title">Wi\u2011Fi</string>
+  <string name="disable_wifi_threshold_title">自動關閉 Wi\u2011Fi</string>
+  <string name="disable_wifi_threshold_summary">如果在幾分鐘後未連接到網路將停用 Wi\u2011Fi</string>
+  <string name="tagged_networks_summary">%1$d 網路已選擇</string>
+  <string name="home_networks_title">家用網路</string>
+  <string name="tagged_networks_title">已選擇的網路</string>
+  <string name="home_network_events_summary">家用網路事件</string>
+  <string name="home_connect_actions_title">當連接到家用網路時</string>
+  <string name="omni_actions_summary">%1$d 個行為已選擇</string>
+  <string name="home_disconnect_actions_title">當斷開家用網路時</string>
+  <string name="work_networks_title">公司網路</string>
+  <string name="work_network_events_summary">公司網路事件</string>
+  <string name="work_connect_actions_title">當連接到公司網路時</string>
+  <string name="work_disconnect_actions_title">當斷開公司網路時</string>
+  <string name="unit_minutes">分鐘</string>
   <string name="unit_sec">秒</string>
+  <string name="category_app_chooser_title">應用程式選擇器</string>
   <!-- Omni actions -->
+  <string name="action_location_off_title">關閉定位</string>
+  <string name="action_location_sensors_only_title">僅限裝置</string>
+  <string name="action_location_battery_saving_title">節約耗電量</string>
+  <string name="action_location_high_accuracy_title">高精準度</string>
 </resources>

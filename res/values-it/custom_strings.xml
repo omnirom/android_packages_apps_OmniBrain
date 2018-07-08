@@ -17,14 +17,47 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
+  <string name="app_name">Eventi</string>
   <string name="event_service_settings_title">Eventi</string>
   <string name="category_media_player_title">Lettore multimediale</string>
   <string name="bt_a2dp_connect_app_list_title">Connessione Bluetooth A2DP</string>
+  <string name="headset_connect_app_list_title">Auricolare con cavo collegato</string>
   <string name="event_service_enabled_title">Attiva l\'evento</string>
   <string name="event_service_running">Il servizio è in esecuzione</string>
   <string name="event_service_stopped">Il servizio non è in esecuzione</string>
+  <string name="category_media_player_info_title">Seleziona app</string>
+  <string name="media_player_autostart_title">Invia la riproduzione multimediale dopo l\'avvio</string>
+  <string name="media_player_music_active_title">Non avviare la riproduzione</string>
+  <string name="autorun_single_app_title">Esegui automaticamente una singola app</string>
+  <string name="autorun_single_app_summary">Non mostrare la finestra di selezione delle app</string>
+  <string name="bt_a2dp_connect_app_list_summary">App da visualizzare quando si avvia un evento A2DP, ad esempio un auricolare Bluetooth</string>
+  <string name="headset_connect_app_list_summary">App da elencare quando è collegato un auricolare via cavo</string>
   <string name="app_chooser_left">Sinistra</string>
   <string name="app_chooser_right">Destra</string>
+  <string name="app_chooser_timeout_title">Durata finestra di dialogo scelta app</string>
+  <string name="app_chooser_position_title">Posizione di finestra di dialogo scelta app</string>
+  <string name="wired_events_threshold_title">Soglia per gli eventi delle cuffie via cavo</string>
+  <string name="wired_events_threshold_summary">Ignora gli eventi dell\'auricolare se sono entro il tempo limite</string>
+  <string name="category_wifi_title">Wi\u2011Fi</string>
+  <string name="disable_wifi_threshold_title">Spegni automaticamente il Wi\u2011Fi</string>
+  <string name="disable_wifi_threshold_summary">Disattiva il Wi\u2011Fi se non connesso a una rete dopo pochi minuti</string>
+  <string name="tagged_networks_summary">%1$d reti taggate</string>
+  <string name="home_networks_title">Rete home</string>
+  <string name="tagged_networks_title">Reti taggate</string>
+  <string name="home_network_events_summary">Eventi di rete home</string>
+  <string name="home_connect_actions_title">Quando connesso alla rete home</string>
+  <string name="omni_actions_summary">%1$d azioni selezionate</string>
+  <string name="home_disconnect_actions_title">Quando si scollega dalla rete home</string>
+  <string name="work_networks_title">Rete del lavoro</string>
+  <string name="work_network_events_summary">Eventi di rete del lavoro</string>
+  <string name="work_connect_actions_title">Quando connesso alle rete del lavoro</string>
+  <string name="work_disconnect_actions_title">Quando disconnesso dalla rete del lavoro</string>
+  <string name="unit_minutes">min</string>
   <string name="unit_sec">sec</string>
+  <string name="category_app_chooser_title">Scegli applicazione</string>
   <!-- Omni actions -->
+  <string name="action_location_off_title">Geolocalizzazione disattivata</string>
+  <string name="action_location_sensors_only_title">Geolocalizzazione: solo sensori</string>
+  <string name="action_location_battery_saving_title">Geolocalizzazione: risparmio della batteria</string>
+  <string name="action_location_high_accuracy_title">Geolocalizzazione: alta precisione</string>
 </resources>

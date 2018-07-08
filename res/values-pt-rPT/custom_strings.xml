@@ -17,6 +17,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
+  <string name="app_name">Eventos</string>
   <string name="event_service_settings_title">Eventos</string>
   <string name="category_media_player_title">Leitor multimédia</string>
   <string name="bt_a2dp_connect_app_list_title">Ligação Bluetooth A2DP</string>
@@ -37,6 +38,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <string name="app_chooser_position_title">Posição do painel de seleção da aplicação</string>
   <string name="wired_events_threshold_title">Tempo limite de eventos de ligação de auscultadores com fio</string>
   <string name="wired_events_threshold_summary">Ignorar eventos de auscultadores se forem ativados dentro do tempo limite</string>
+  <string name="category_wifi_title">Wi\u2011Fi</string>
+  <string name="disable_wifi_threshold_title">Desligar o Wi\u2011Fi automaticamente</string>
+  <string name="disable_wifi_threshold_summary">Desativar o Wi\u2011Fi se não estiver conectado a uma rede durante alguns minutos</string>
+  <string name="tagged_networks_summary">%1$d redes marcadas</string>
+  <string name="home_networks_title">Rede Doméstica</string>
+  <string name="tagged_networks_title">Redes marcadas</string>
+  <string name="home_network_events_summary">Eventos da rede Doméstica</string>
+  <string name="home_connect_actions_title">Quando ligado à rede Doméstica</string>
+  <string name="omni_actions_summary">%1$d ações selecionadas</string>
+  <string name="home_disconnect_actions_title">Quando se desconectar da rede Doméstica</string>
+  <string name="work_networks_title">Rede de Trabalho</string>
+  <string name="work_network_events_summary">Eventos da rede de Trabalho</string>
+  <string name="work_connect_actions_title">Quando conectar à rede de Trabalho</string>
+  <string name="work_disconnect_actions_title">Quando desconectar da rede de Trabalho</string>
+  <string name="unit_minutes">min</string>
   <string name="unit_sec">seg</string>
+  <string name="category_app_chooser_title">Seletor de aplicações</string>
   <!-- Omni actions -->
+  <string name="action_location_off_title">Localização desligada</string>
+  <string name="action_location_sensors_only_title">Localização: apenas no dispositivo</string>
+  <string name="action_location_battery_saving_title">Localização: poupança de bateria</string>
+  <string name="action_location_high_accuracy_title">Localização: alta precisão</string>
 </resources>

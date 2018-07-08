@@ -17,6 +17,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
+  <string name="app_name">Sündmused</string>
   <string name="event_service_settings_title">Sündmused</string>
   <string name="category_media_player_title">Meediamängija</string>
   <string name="bt_a2dp_connect_app_list_title">Bluetooth A2DP ühendamine</string>
@@ -37,6 +38,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <string name="app_chooser_position_title">Rakendusevalija dialoogi asukoht</string>
   <string name="wired_events_threshold_title">Juhtmega peakomplekti sündmuse piirmäär</string>
   <string name="wired_events_threshold_summary">Ignoreeri peakomplekti sündmusi, kui need toimuvad aja piirmääras</string>
+  <string name="category_wifi_title">Wi\u2011Fi</string>
+  <string name="disable_wifi_threshold_title">Lülita Wi\u2011Fi automaatselt välja</string>
+  <string name="disable_wifi_threshold_summary">Desaktiveeri Wi\u2011Fi kui pole võrguga ühendatud pärast paari minutit</string>
+  <string name="tagged_networks_summary">%1$d võrku sildistatud</string>
+  <string name="home_networks_title">Koduvõrk</string>
+  <string name="tagged_networks_title">Sildistatud võrgud</string>
+  <string name="home_network_events_summary">Koduvõrgusündmused</string>
+  <string name="home_connect_actions_title">Kui on koduga ühendatud</string>
+  <string name="omni_actions_summary">%1$d tegevust valitud</string>
+  <string name="home_disconnect_actions_title">Kui on kodust lahti ühendatud</string>
+  <string name="work_networks_title">Töövõrk</string>
+  <string name="work_network_events_summary">Töövõrgusündmused</string>
+  <string name="work_connect_actions_title">Kui on tööga ühendatud</string>
+  <string name="work_disconnect_actions_title">Kui on tööst lahti ühendatud</string>
+  <string name="unit_minutes">min</string>
   <string name="unit_sec">s</string>
+  <string name="category_app_chooser_title">Rakendusevalija</string>
   <!-- Omni actions -->
+  <string name="action_location_off_title">Asukoht väljas</string>
+  <string name="action_location_sensors_only_title">Asukoht sensoripõhine</string>
+  <string name="action_location_battery_saving_title">Asukoht akut säästev</string>
+  <string name="action_location_high_accuracy_title">Asukoht kõrge täpsusega</string>
 </resources>

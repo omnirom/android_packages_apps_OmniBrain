@@ -17,6 +17,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
+  <string name="app_name">События</string>
   <string name="event_service_settings_title">Мероприятия</string>
   <string name="category_media_player_title">Медиаплеер</string>
   <string name="bt_a2dp_connect_app_list_title">Подключение Bluetooth A2DP</string>
@@ -37,6 +38,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <string name="app_chooser_position_title">Позиция диалогового окна выбора приложения</string>
   <string name="wired_events_threshold_title">Время ожидания подключения проводных наушников</string>
   <string name="wired_events_threshold_summary">Игнорировать события гарнитуры, когда они находятся в пределах порога</string>
+  <string name="category_wifi_title">Wi\u2011Fi</string>
+  <string name="disable_wifi_threshold_title">Автоматическое отключение Wi\u2011Fi</string>
+  <string name="home_networks_title">Домашняя сеть</string>
+  <string name="home_network_events_summary">События домашней сети</string>
+  <string name="home_connect_actions_title">При подключении к домашней сети</string>
+  <string name="omni_actions_summary">%1$d элементов выбрано</string>
+  <string name="home_disconnect_actions_title">При отключении от домашней сети</string>
+  <string name="work_networks_title">Рабочая сеть</string>
+  <string name="work_network_events_summary">События рабочей сети</string>
+  <string name="work_connect_actions_title">При подключении к рабочей сети</string>
+  <string name="work_disconnect_actions_title">При отключении от рабочей сети</string>
+  <string name="unit_minutes">мин.</string>
   <string name="unit_sec">сек.</string>
+  <string name="category_app_chooser_title">Выбор приложения</string>
   <!-- Omni actions -->
+  <string name="action_location_off_title">Местоположение выкл.</string>
 </resources>

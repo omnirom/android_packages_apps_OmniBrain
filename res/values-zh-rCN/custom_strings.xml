@@ -17,6 +17,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
+  <string name="app_name">事件</string>
   <string name="event_service_settings_title">事件</string>
   <string name="category_media_player_title">媒体播放器</string>
   <string name="bt_a2dp_connect_app_list_title">蓝牙 A2DP 连接</string>
@@ -37,6 +38,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <string name="app_chooser_position_title">应用程序选择器对话框位置</string>
   <string name="wired_events_threshold_title">有线耳机事件阈值</string>
   <string name="wired_events_threshold_summary">在阈值时间内忽略耳机事件</string>
+  <string name="category_wifi_title">Wi\u2011Fi</string>
+  <string name="disable_wifi_threshold_title">自动关闭 Wi\u2011Fi</string>
+  <string name="disable_wifi_threshold_summary">如果在几分钟后未连接到网络, 则停用 Wi\u2011Fi</string>
+  <string name="tagged_networks_summary">%1$d 网络已标记</string>
+  <string name="home_networks_title">家庭网络</string>
+  <string name="tagged_networks_title">标记网络</string>
+  <string name="home_network_events_summary">家庭网络事件</string>
+  <string name="home_connect_actions_title">连接到主页时</string>
+  <string name="omni_actions_summary">选定的 %1$d 操作</string>
+  <string name="home_disconnect_actions_title">断开与主页的连接时</string>
+  <string name="work_networks_title">工作网络</string>
+  <string name="work_network_events_summary">工作网络事件</string>
+  <string name="work_connect_actions_title">连接到工作时</string>
+  <string name="work_disconnect_actions_title">断开与工作的连接时</string>
+  <string name="unit_minutes">分钟</string>
   <string name="unit_sec">秒</string>
+  <string name="category_app_chooser_title">应用程序选择器</string>
   <!-- Omni actions -->
+  <string name="action_location_off_title">位置信息关闭</string>
+  <string name="action_location_sensors_only_title">仅限位置传感器</string>
+  <string name="action_location_battery_saving_title">位置电池保存</string>
+  <string name="action_location_high_accuracy_title">定位精度高</string>
 </resources>

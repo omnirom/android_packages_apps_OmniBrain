@@ -17,6 +17,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
+  <string name="app_name">Události</string>
   <string name="event_service_settings_title">Události</string>
   <string name="category_media_player_title">Přehrávač médií</string>
   <string name="bt_a2dp_connect_app_list_title">Připojení Bluetooth A2DP</string>
@@ -37,6 +38,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <string name="app_chooser_position_title">Pozice dialogu výběru aplikace</string>
   <string name="wired_events_threshold_title">Prahová hodnota události kabelových sluchátek</string>
   <string name="wired_events_threshold_summary">Ignorovat událostí sluchátek, pokud jsou v rámci prahové hodnoty</string>
+  <string name="category_wifi_title">Wi\u2011Fi</string>
+  <string name="disable_wifi_threshold_title">Automaticky vypnout Wi\u2011Fi</string>
+  <string name="disable_wifi_threshold_summary">Deaktivovat Wi\u2011Fi po pár minutách, pokud nejste připojeni k síti</string>
+  <string name="tagged_networks_summary">Označené sítě: %1$d</string>
+  <string name="home_networks_title">Domácí síť</string>
+  <string name="tagged_networks_title">Označené sítě</string>
+  <string name="home_network_events_summary">Události domácí sítě</string>
+  <string name="home_connect_actions_title">Při připojení k domácí síti</string>
+  <string name="omni_actions_summary">Vybrané akce: %1$d</string>
+  <string name="home_disconnect_actions_title">Při odpojení od domácí sítě</string>
+  <string name="work_networks_title">Pracovní síť</string>
+  <string name="work_network_events_summary">Události pracovní sítě</string>
+  <string name="work_connect_actions_title">Při připojení k pracovní síti</string>
+  <string name="work_disconnect_actions_title">Při odpojení od pracovní sítě</string>
+  <string name="unit_minutes">min</string>
   <string name="unit_sec">sek</string>
+  <string name="category_app_chooser_title">Výběr aplikací</string>
   <!-- Omni actions -->
+  <string name="action_location_off_title">Poloha vypnuta</string>
+  <string name="action_location_sensors_only_title">Poloha: pouze zařízení</string>
+  <string name="action_location_battery_saving_title">Poloha: úspora baterie</string>
+  <string name="action_location_high_accuracy_title">Poloha: vysoká přesnost</string>
 </resources>

@@ -17,6 +17,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
+  <string name="app_name">Események</string>
   <string name="event_service_settings_title">Események</string>
   <string name="category_media_player_title">Médialejátszó</string>
   <string name="bt_a2dp_connect_app_list_title">Bluetooth A2DP csatlakoztatása</string>
@@ -37,6 +38,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <string name="app_chooser_position_title">Alkalmazásválasztó párbeszédpanel pozíciója</string>
   <string name="wired_events_threshold_title">A vezetékes fejhallgató által kiváltott esemény küszöbe</string>
   <string name="wired_events_threshold_summary">A fejhallgató által kiváltott események figyelmen kívül hagyása, ha küszöbidőn belül vannak</string>
+  <string name="category_wifi_title">Wi\u2011Fi</string>
+  <string name="disable_wifi_threshold_title">Wi\u2011Fi automatikus kikapcsolása</string>
+  <string name="disable_wifi_threshold_summary">Kikapcsolja a Wi\u2011Fi\u2011t, ha az néhány percig nem csatlakozik a hálózathoz</string>
+  <string name="tagged_networks_summary">%1$d hálózat megjelölve</string>
+  <string name="home_networks_title">Otthoni hálózat</string>
+  <string name="tagged_networks_title">Megjelölt hálózatok</string>
+  <string name="home_network_events_summary">Otthoni hálózati események</string>
+  <string name="home_connect_actions_title">Ha az otthoni hálózathoz csatlakozik</string>
+  <string name="omni_actions_summary">%1$d művelet kijelölve</string>
+  <string name="home_disconnect_actions_title">Ha leválasztásra kerül az otthoni hálózatról</string>
+  <string name="work_networks_title">Munkahelyi hálózat</string>
+  <string name="work_network_events_summary">Munkahelyi hálózati események</string>
+  <string name="work_connect_actions_title">Ha a munkahelyi hálózathoz csatlakozik</string>
+  <string name="work_disconnect_actions_title">Ha leválasztásra kerül a munkahelyi hálózatról</string>
+  <string name="unit_minutes">perc</string>
   <string name="unit_sec">mp</string>
+  <string name="category_app_chooser_title">Alkalmazásválasztó</string>
   <!-- Omni actions -->
+  <string name="action_location_off_title">Helyzetmeghatározás ki</string>
+  <string name="action_location_sensors_only_title">Érzékelőkön alapuló helyzetmeghatározás</string>
+  <string name="action_location_battery_saving_title">Akkumulátorkímélő helyzetmeghatározás</string>
+  <string name="action_location_high_accuracy_title">Nagy pontosságú helyzetmeghatározás</string>
 </resources>

@@ -17,6 +17,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
+  <string name="app_name">Hadiseler</string>
   <string name="event_service_settings_title">Hadiseler</string>
   <string name="category_media_player_title">Medya çalıcı</string>
   <string name="bt_a2dp_connect_app_list_title">Bluetooth A2DP bağlantısı</string>
@@ -29,14 +30,34 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <string name="media_player_music_active_title">Çalınırken hadiseyi başlatma</string>
   <string name="autorun_single_app_title">Kendiliğinden uygulama çalıştır</string>
   <string name="autorun_single_app_summary">Uygulama seçimi penceresini gösterme</string>
-  <string name="bt_a2dp_connect_app_list_summary">Bluetooth kulaklığı bağlamak gibi olan bir A2DP hadisesi başladığında listenecek olan uygulama(lar)</string>
-  <string name="headset_connect_app_list_summary">Kablolu kulaklık bağlandığında listelenecek olan uygulama(lar)</string>
+  <string name="bt_a2dp_connect_app_list_summary">Bluetooth kulaklığı bağlamak gibi olan bir A2DP hadisesi başladığında listelenecek olan uygulamalar</string>
+  <string name="headset_connect_app_list_summary">Kablolu bir kulaklık bağlandığında listelenecek olan uygulamalar</string>
   <string name="app_chooser_left">Sol</string>
   <string name="app_chooser_right">Sağ</string>
-  <string name="app_chooser_timeout_title">Uygulama seçimi penceresinin zaman aşımı</string>
-  <string name="app_chooser_position_title">Uygulama seçimi penceresinin yeri</string>
+  <string name="app_chooser_timeout_title">Uygulama seçici penceresinin zaman aşımı</string>
+  <string name="app_chooser_position_title">Uygulama seçici penceresinin yeri</string>
   <string name="wired_events_threshold_title">Kablolu kulaklık hadisesinin eşiği</string>
-  <string name="wired_events_threshold_summary">Eşik zamanı dahilindeki kulaklık hadiselerini yoksay</string>
+  <string name="wired_events_threshold_summary">Kulaklık hadiseleri eşik müddeti dâhilindeyse yok say</string>
+  <string name="category_wifi_title">Kablosuz bağlantı</string>
+  <string name="disable_wifi_threshold_title">Kablosuz bağlantıyı kendiliğinden kapat</string>
+  <string name="disable_wifi_threshold_summary">Birkaç dakîka sonra bir şebekeye bağlı değilsem kablosuz bağlantıyı devre dışı bırak</string>
+  <string name="tagged_networks_summary">%1$d şebeke etiketlendi</string>
+  <string name="home_networks_title">Ev şebekesi</string>
+  <string name="tagged_networks_title">Etiketlenen şebekeler</string>
+  <string name="home_network_events_summary">Ev şebekesi hadiseleri</string>
+  <string name="home_connect_actions_title">Ev şebekesine bağlanıldığı vakit</string>
+  <string name="omni_actions_summary">%1$d eylem seçildi</string>
+  <string name="home_disconnect_actions_title">Ev şebekesiyle olan bağlantı kesildiği vakit</string>
+  <string name="work_networks_title">İş şebekesi</string>
+  <string name="work_network_events_summary">İş şebekesi hadiseleri</string>
+  <string name="work_connect_actions_title">İş şebekesine bağlanıldığı vakit</string>
+  <string name="work_disconnect_actions_title">İş şebekesiyle olan bağlantı kesildiği vakit</string>
+  <string name="unit_minutes">dakîka</string>
   <string name="unit_sec">sâniye</string>
+  <string name="category_app_chooser_title">Uygulama seçici</string>
   <!-- Omni actions -->
+  <string name="action_location_off_title">Yer tesbîtini kapat</string>
+  <string name="action_location_sensors_only_title">Sadece sensörlü yer tesbîti</string>
+  <string name="action_location_battery_saving_title">Pil tasarruflu yer tesbîti</string>
+  <string name="action_location_high_accuracy_title">Yüksek hassâsiyyetli yer tesbîti</string>
 </resources>

@@ -17,5 +17,47 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
+  <string name="app_name">イベント</string>
+  <string name="event_service_settings_title">イベント</string>
+  <string name="category_media_player_title">メディアプレイヤー</string>
+  <string name="bt_a2dp_connect_app_list_title">Bluetooth A2DP 接続</string>
+  <string name="headset_connect_app_list_title">有線ヘッドセット接続</string>
+  <string name="event_service_enabled_title">イベントサービスを有効にする</string>
+  <string name="event_service_running">サービスは実行中です</string>
+  <string name="event_service_stopped">サービスは実行中ではありません</string>
+  <string name="category_media_player_info_title">アプリの選択</string>
+  <string name="media_player_autostart_title">開始後にメディア再生イベントを送信する</string>
+  <string name="media_player_music_active_title">再生時にイベントを開始しない</string>
+  <string name="autorun_single_app_title">1つのアプリを自動実行</string>
+  <string name="autorun_single_app_summary">アプリ選択ダイアログを表示しない</string>
+  <string name="bt_a2dp_connect_app_list_summary">Bluetoothヘッドセットの接続などA2DPイベントが発生した時に表示されるアプリ</string>
+  <string name="headset_connect_app_list_summary">有線ヘッドセットの接続イベントが発生した時に表示されるアプリ</string>
+  <string name="app_chooser_left">左</string>
+  <string name="app_chooser_right">右</string>
+  <string name="app_chooser_timeout_title">アプリ選択ダイアログの待機時間</string>
+  <string name="app_chooser_position_title">アプリ選択ダイアログの位置</string>
+  <string name="wired_events_threshold_title">有線ヘッドセットイベントのしきい値</string>
+  <string name="wired_events_threshold_summary">しきい値時間内にある場合はヘッドセットイベントを無視する</string>
+  <string name="category_wifi_title">Wi\u2011Fi</string>
+  <string name="disable_wifi_threshold_title">自動的にWi-Fiをオフにする</string>
+  <string name="disable_wifi_threshold_summary">数分間ネットワークに接続されていない場合はWi-Fiを無効にする</string>
+  <string name="tagged_networks_summary">%1$d 件ネットワークがタグ付けされました</string>
+  <string name="home_networks_title">ホームネットワーク</string>
+  <string name="tagged_networks_title">タグネットワーク</string>
+  <string name="home_network_events_summary">ホームネットワークイベント</string>
+  <string name="home_connect_actions_title">ホームネットワーク接続時</string>
+  <string name="omni_actions_summary">%1$dアクション選択済み</string>
+  <string name="home_disconnect_actions_title">ホームネットワーク切断時</string>
+  <string name="work_networks_title">社内ネットワーク</string>
+  <string name="work_network_events_summary">社内ネットワークイベント</string>
+  <string name="work_connect_actions_title">社内ネットワーク接続時</string>
+  <string name="work_disconnect_actions_title">社内ネットワーク切断時</string>
+  <string name="unit_minutes">最小</string>
+  <string name="unit_sec">秒</string>
+  <string name="category_app_chooser_title">アプリ選択</string>
   <!-- Omni actions -->
+  <string name="action_location_off_title">位置情報オフ</string>
+  <string name="action_location_sensors_only_title">端末のみの測位</string>
+  <string name="action_location_battery_saving_title">バッテリー節約測位</string>
+  <string name="action_location_high_accuracy_title">高精度測位</string>
 </resources>

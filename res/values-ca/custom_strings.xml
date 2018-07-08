@@ -17,6 +17,47 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
+  <string name="app_name">Esdeveniments</string>
+  <string name="event_service_settings_title">Esdeveniments</string>
+  <string name="category_media_player_title">Reproductor multimèdia</string>
+  <string name="bt_a2dp_connect_app_list_title">Connexió Bluetooth A2DP</string>
+  <string name="headset_connect_app_list_title">Connexió d\'auriculars amb cable</string>
+  <string name="event_service_enabled_title">Habilita el servei d\'esdeveniments</string>
+  <string name="event_service_running">El servei s\'està executant</string>
+  <string name="event_service_stopped">El servei no s\'està executant</string>
+  <string name="category_media_player_info_title">Selecció d\'app</string>
+  <string name="media_player_autostart_title">Envia l\'esdeveniment de reproducció multimèdia després de començar</string>
+  <string name="media_player_music_active_title">No iniciïs l\'esdeveniment en reproduir</string>
+  <string name="autorun_single_app_title">Executa automàticament una sola app</string>
+  <string name="autorun_single_app_summary">No mostris el diàleg de selecció d\'app</string>
+  <string name="bt_a2dp_connect_app_list_summary">Apps que han de sortir a la llista quan s\'iniciï un esdeveniment A2DP, com connectar uns auriculars Bluetooth</string>
+  <string name="headset_connect_app_list_summary">Apps que han de sortir a la llista quan es connectin uns auriculars amb cable</string>
+  <string name="app_chooser_left">Esquerra</string>
+  <string name="app_chooser_right">Dreta</string>
+  <string name="app_chooser_timeout_title">Temps d\'espera del diàleg per triar l\'app</string>
+  <string name="app_chooser_position_title">Posició del diàleg per triar l\'app</string>
+  <string name="wired_events_threshold_title">Llindar de l\'esdeveniment d\'auriculars amb cable</string>
+  <string name="wired_events_threshold_summary">Ignora els esdeveniments d\'auricular si estan a l\'interval de temps</string>
+  <string name="category_wifi_title">Wi\u2011Fi</string>
+  <string name="disable_wifi_threshold_title">Apaga la Wi\u2011Fi automàticament</string>
+  <string name="disable_wifi_threshold_summary">Desactiva la Wi\u2011Fi si no s\'està connectat a una xarxa després d\'uns quants minuts</string>
+  <string name="tagged_networks_summary">Etiquetades %1$d xarxes</string>
+  <string name="home_networks_title">Xarxa domèstica</string>
+  <string name="tagged_networks_title">Xarxes etiquetades</string>
+  <string name="home_network_events_summary">Esdeveniments de la xarxa domèstica</string>
+  <string name="home_connect_actions_title">En connectar a casa</string>
+  <string name="omni_actions_summary">%1$d accions seleccionades</string>
+  <string name="home_disconnect_actions_title">En desconnectar de casa</string>
+  <string name="work_networks_title">Xarxa de la feina</string>
+  <string name="work_network_events_summary">Esdeveniments de la xarxa de la feina</string>
+  <string name="work_connect_actions_title">En connectar a la feina</string>
+  <string name="work_disconnect_actions_title">En desconnectar de la feina</string>
+  <string name="unit_minutes">min</string>
   <string name="unit_sec">sec</string>
+  <string name="category_app_chooser_title">Selector d\'aplicació</string>
   <!-- Omni actions -->
+  <string name="action_location_off_title">Ubicació desactivada</string>
+  <string name="action_location_sensors_only_title">Ubicació: només sensors</string>
+  <string name="action_location_battery_saving_title">Ubicació: estalvi de bateria</string>
+  <string name="action_location_high_accuracy_title">Ubicació: alta precisió</string>
 </resources>
