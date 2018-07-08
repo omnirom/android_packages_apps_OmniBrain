@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38e00db0_b4cdb7cd",
+        "filename": "src/org/omnirom/omnibrain/EventService.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000026
+      },
+      "writtenOn": "2018-07-08T22:34:11Z",
+      "side": 1,
+      "message": "huh?             \n...\nandroid:defaultValue\u003d\"true\"\nandroid:key\u003d\"media_player_music_active\"\n...",
+      "revId": "132f378c586785fb290b7c4cebb951ec9332c16d",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
