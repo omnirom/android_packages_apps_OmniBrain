@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dbcbd4ce_cc75cf7a",
+        "filename": "src/org/omnirom/omnibrain/EventServiceSettings.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1002199
+      },
+      "writtenOn": "2018-07-09T07:03:51Z",
+      "side": 1,
+      "message": "was here :)",
+      "revId": "649d9ea949f47d14449dcc908209c31f23fd9aa4",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
