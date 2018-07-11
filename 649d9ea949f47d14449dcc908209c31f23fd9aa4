@@ -16,6 +16,24 @@
       "revId": "649d9ea949f47d14449dcc908209c31f23fd9aa4",
       "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "221fb64a_372262d3",
+        "filename": "src/org/omnirom/omnibrain/EventServiceSettings.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000026
+      },
+      "writtenOn": "2018-07-11T12:41:12Z",
+      "side": 1,
+      "message": "copy pasta :)\nso we want this to be default true?",
+      "parentUuid": "dbcbd4ce_cc75cf7a",
+      "revId": "649d9ea949f47d14449dcc908209c31f23fd9aa4",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
     }
   ]
 }
