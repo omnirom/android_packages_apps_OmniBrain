@@ -616,8 +616,12 @@ public class EventService extends Service {
                     valueList.add(intentUri);
                 }
             }
+
+            getPrefs(this).edit().putString(key, valueList).commit();
+
             if (DEBUG) Log.d(TAG, "getActionList valueList = " + valueList);
         }
+        
         return valueList;
     }
 
