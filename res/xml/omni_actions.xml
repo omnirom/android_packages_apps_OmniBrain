@@ -64,4 +64,36 @@
         runner="org.omnirom.omnibrain.runners.DNDRunner"
         title="@string/action_dnd_alarms_title"
         value="3" />
+
+    <action
+        key="action_enable_adb"
+        setting="adb_enabled"
+        setting_type="Global"
+        title="@string/action_enable_adb_title"
+        value="1"
+        value_type="int" />
+
+    <action
+        key="action_disable_adb"
+        setting="adb_enabled"
+        setting_type="Global"
+        title="@string/action_disable_adb_title"
+        value="0"
+        value_type="int" />
+
+    <action
+        key="action_disable_network_adb"
+        setting="adb_port"
+        setting_type="Secure"
+        title="@string/action_disable_network_adb_title"
+        value="-1"
+        value_type="int" />
+
+    <action
+        key="action_enable_network_adb"
+        setting="adb_port"
+        setting_type="Secure"
+        title="@string/action_enable_network_adb_title"
+        value="5555"
+        value_type="int" />
 </actions>

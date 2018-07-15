@@ -56,6 +56,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="category_app_chooser_title">Application chooser</string>
     <string name="wifi_location_disabled">Unavailable because location is turned off</string>
     <string name="event_disconnect_headset_or_a2dp_title">Close application when disconnect</string>
+    <string name="public_networks_title">Public network</string>
+    <string name="public_network_events_summary">Public network events</string>
+    <string name="public_connect_actions_title">When connect to public network</string>
+    <string name="public_disconnect_actions_title">When disconnect from public network</string>
 
     <!-- Omni actions -->
     <string name="action_location_off_title">Location off</string>
@@ -66,5 +70,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="action_dnd_important_title">DND important only</string>
     <string name="action_dnd_no_interruptions_title">DND no interruptions</string>
     <string name="action_dnd_alarms_title">DND alarms only</string>
-
+    <string name="action_enable_adb_title">Enable ADB</string>
+    <string name="action_disable_adb_title">Disable ADB</string>
+    <string name="action_enable_network_adb_title">Enable ADB over network</string>
+    <string name="action_disable_network_adb_title">Disable ADB over network</string>
 </resources>
