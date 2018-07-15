@@ -81,8 +81,8 @@
     </android.support.v7.preference.PreferenceCategory>
 
     <android.support.v7.preference.PreferenceCategory
-            android:key="category_app_chooser"
-            android:title="@string/category_app_chooser_title">
+        android:key="category_app_chooser"
+        android:title="@string/category_app_chooser_title">
 
         <android.support.v14.preference.SwitchPreference
             android:defaultValue="true"
@@ -128,9 +128,17 @@
             android:summary="@string/work_network_events_summary"
             android:title="@string/work_networks_title" />
 
+        <android.support.v7.preference.Preference
+            android:dependency="event_service_enabled"
+            android:fragment="org.omnirom.omnibrain.PublicNetworkEventsSettings"
+            android:icon="@drawable/ic_settings_wireless"
+            android:key="public_network_events"
+            android:summary="@string/public_network_events_summary"
+            android:title="@string/public_networks_title" />
+
         <org.omnirom.omnilib.preference.SeekBarPreference
             android:dependency="event_service_enabled"
-            android:icon="@drawable/ic_settings_wireless"
+            android:icon="@drawable/ic_wifi_signal_0"
             android:key="disable_wifi_threshold"
             android:max="10"
             android:summary="@string/disable_wifi_threshold_summary"

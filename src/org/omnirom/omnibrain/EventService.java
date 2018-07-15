@@ -297,34 +297,28 @@ public class EventService extends Service {
     }
 
     private void execOnConnectActions(Context context, String ssid) {
-        boolean isHome = isTaggedNetwork(ssid, getPrefs(context).getString(HomeNetworkEventsSettings.HOME_TAGGED_NETWORKS, null));
-        if (isHome) {
+        if (isTaggedNetwork(ssid, getPrefs(context).getString(HomeNetworkEventsSettings.HOME_TAGGED_NETWORKS, null))) {
             if (DEBUG) Log.d(TAG, "Is HOME");
             execOmniActions(context, getPrefs(context).getString(HomeNetworkEventsSettings.HOME_CONNECT_ACTIONS, null));
-            return;
-        }
-
-        boolean isWork = isTaggedNetwork(ssid, getPrefs(context).getString(WorkNetworkEventsSettings.WORK_TAGGED_NETWORKS, null));
-        if (isWork) {
+        } else if (isTaggedNetwork(ssid, getPrefs(context).getString(WorkNetworkEventsSettings.WORK_TAGGED_NETWORKS, null))) {
             if (DEBUG) Log.d(TAG, "Is WORK");
             execOmniActions(context, getPrefs(context).getString(WorkNetworkEventsSettings.WORK_CONNECT_ACTIONS, null));
-            return;
+        } else {
+            if (DEBUG) Log.d(TAG, "Is PUBLIC");
+            execOmniActions(context, getPrefs(context).getString(PublicNetworkEventsSettings.PUBLIC_CONNECT_ACTIONS, null));
         }
     }
 
     private void execOnDisconnectActions(Context context) {
-        boolean isHome = isTaggedNetwork(lastSSID, getPrefs(context).getString(HomeNetworkEventsSettings.HOME_TAGGED_NETWORKS, null));
-        if (isHome) {
+        if (isTaggedNetwork(lastSSID, getPrefs(context).getString(HomeNetworkEventsSettings.HOME_TAGGED_NETWORKS, null))) {
             if (DEBUG) Log.d(TAG, "Is HOME");
             execOmniActions(context, getPrefs(context).getString(HomeNetworkEventsSettings.HOME_DISCONNECT_ACTIONS, null));
-            return;
-        }
-
-        boolean isWork = isTaggedNetwork(lastSSID, getPrefs(context).getString(WorkNetworkEventsSettings.WORK_TAGGED_NETWORKS, null));
-        if (isWork) {
+        } else if (isTaggedNetwork(lastSSID, getPrefs(context).getString(WorkNetworkEventsSettings.WORK_TAGGED_NETWORKS, null))) {
             if (DEBUG) Log.d(TAG, "Is WORK");
             execOmniActions(context, getPrefs(context).getString(WorkNetworkEventsSettings.WORK_DISCONNECT_ACTIONS, null));
-            return;
+        } else {
+            if (DEBUG) Log.d(TAG, "Is PUBLIC");
+            execOmniActions(context, getPrefs(context).getString(PublicNetworkEventsSettings.PUBLIC_DISCONNECT_ACTIONS, null));
         }
     }
 
@@ -535,8 +529,6 @@ public class EventService extends Service {
     private void registerListener() {
         if (DEBUG) Log.d(TAG, "registerListener");
         IntentFilter filter = new IntentFilter();
-        filter.addAction(BluetoothDevice.ACTION_ACL_CONNECTED);
-        filter.addAction(BluetoothDevice.ACTION_ACL_DISCONNECTED);
         filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
         filter.addAction(BluetoothA2dp.ACTION_CONNECTION_STATE_CHANGED);
         filter.addAction(AudioManager.ACTION_HEADSET_PLUG);
@@ -616,8 +608,13 @@ public class EventService extends Service {
                     valueList.add(intentUri);
                 }
             }
+
+            // Save filtered values
+            getPrefs(this).edit().putString(key, TextUtils.join(":", valueList)).commit();
+
             if (DEBUG) Log.d(TAG, "getActionList valueList = " + valueList);
         }
+
         return valueList;
     }
 

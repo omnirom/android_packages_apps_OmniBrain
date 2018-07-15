@@ -43,20 +43,27 @@ public class OmniBrainActivity extends Activity implements
         }
     }
 
-    public boolean onPreferenceStartFragment(PreferenceFragment caller, Preference pref){
-        switch(pref.getFragment()){
+    public boolean onPreferenceStartFragment(PreferenceFragment caller, Preference pref) {
+        switch (pref.getFragment()) {
             case "org.omnirom.omnibrain.HomeNetworkEventsSettings":
                 mFragmentManager.beginTransaction()
-                    .addToBackStack(null)
-                    .replace(R.id.content_frame, new HomeNetworkEventsSettings())
-                    .commit();
+                        .addToBackStack(null)
+                        .replace(R.id.content_frame, new HomeNetworkEventsSettings())
+                        .commit();
                 setTitle(pref.getTitle());
                 break;
             case "org.omnirom.omnibrain.WorkNetworkEventsSettings":
                 mFragmentManager.beginTransaction()
-                    .addToBackStack(null)
-                    .replace(R.id.content_frame, new WorkNetworkEventsSettings())
-                    .commit();
+                        .addToBackStack(null)
+                        .replace(R.id.content_frame, new WorkNetworkEventsSettings())
+                        .commit();
+                setTitle(pref.getTitle());
+                break;
+            case "org.omnirom.omnibrain.PublicNetworkEventsSettings":
+                mFragmentManager.beginTransaction()
+                        .addToBackStack(null)
+                        .replace(R.id.content_frame, new PublicNetworkEventsSettings())
+                        .commit();
                 setTitle(pref.getTitle());
                 break;
         }
