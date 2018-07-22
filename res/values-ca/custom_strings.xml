@@ -37,7 +37,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <string name="app_chooser_timeout_title">Temps d\'espera del diàleg per triar l\'app</string>
   <string name="app_chooser_position_title">Posició del diàleg per triar l\'app</string>
   <string name="wired_events_threshold_title">Llindar de l\'esdeveniment d\'auriculars amb cable</string>
-  <string name="wired_events_threshold_summary">Ignora els esdeveniments d\'auricular si estan a l\'interval de temps</string>
+  <string name="wired_events_threshold_summary">Ignora els esdeveniments d\'auricular dins de l\'interval de temps</string>
   <string name="category_wifi_title">Wi\u2011Fi</string>
   <string name="disable_wifi_threshold_title">Apaga la Wi\u2011Fi automàticament</string>
   <string name="disable_wifi_threshold_summary">Desactiva la Wi\u2011Fi si no s\'està connectat a una xarxa després d\'uns quants minuts</string>
