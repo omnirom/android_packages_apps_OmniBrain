@@ -24,6 +24,8 @@ import android.support.v14.preference.PreferenceFragment;
 import android.support.v7.preference.Preference;
 import android.view.MenuItem;
 
+import org.omnirom.omnibrain.fragments.EventCategoryFragment;
+
 public class OmniBrainActivity extends Activity implements
         PreferenceFragment.OnPreferenceStartFragmentCallback {
     private FragmentManager mFragmentManager;
@@ -38,35 +40,18 @@ public class OmniBrainActivity extends Activity implements
         // Do not overlapping fragments.
         if (savedInstanceState == null) {
             mFragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, new EventServiceSettings())
+                    .replace(R.id.content_frame, new EventCategoryFragment())
                     .commit();
         }
     }
 
     public boolean onPreferenceStartFragment(PreferenceFragment caller, Preference pref) {
-        switch (pref.getFragment()) {
-            case "org.omnirom.omnibrain.HomeNetworkEventsSettings":
-                mFragmentManager.beginTransaction()
-                        .addToBackStack(null)
-                        .replace(R.id.content_frame, new HomeNetworkEventsSettings())
-                        .commit();
-                setTitle(pref.getTitle());
-                break;
-            case "org.omnirom.omnibrain.WorkNetworkEventsSettings":
-                mFragmentManager.beginTransaction()
-                        .addToBackStack(null)
-                        .replace(R.id.content_frame, new WorkNetworkEventsSettings())
-                        .commit();
-                setTitle(pref.getTitle());
-                break;
-            case "org.omnirom.omnibrain.PublicNetworkEventsSettings":
-                mFragmentManager.beginTransaction()
-                        .addToBackStack(null)
-                        .replace(R.id.content_frame, new PublicNetworkEventsSettings())
-                        .commit();
-                setTitle(pref.getTitle());
-                break;
-        }
+        mFragmentManager.beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.content_frame, caller)
+                .commit();
+        setTitle(pref.getTitle());
+                
         return true;
     }
 
