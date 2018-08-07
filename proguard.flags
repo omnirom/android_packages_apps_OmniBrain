@@ -8,3 +8,6 @@
   public <init>(android.content.Context);
   public void run(java.lang.String);
 }
+
+# Keep all fragments in this package, which are used by reflection.
+-keep class org.omnirom.omnibrain.fragments.** { *; }

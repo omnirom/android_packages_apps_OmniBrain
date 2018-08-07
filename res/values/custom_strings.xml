@@ -17,8 +17,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
     <string name="app_name">Events</string>
-    <string name="event_service_settings_title">Events</string>
+    <string name="event_category_title">Events</string>
     <string name="category_media_player_title">Media player</string>
+    <string name="bt_events_title">Bluetooth</string>
+    <string name="location_events_title">Location</string>
+    <string name="nfc_events_title">NFC</string>
+
     <string name="bt_a2dp_connect_app_list_title">Bluetooth A2DP connect</string>
     <string name="headset_connect_app_list_title">Wired headset connect</string>
     <string name="event_service_enabled_title">Enable event service</string>
