@@ -16,7 +16,7 @@
  *
  */
 
-package org.omnirom.omnibrain;
+package org.omnirom.omnibrain.fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -24,13 +24,11 @@ import android.os.Bundle;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.text.TextUtils;
-import android.support.v14.preference.PreferenceFragment;
 
 import org.omnirom.omnibrain.R;
-
-import org.omnirom.omnilib.preference.OmniActionsListPreference;
-import org.omnirom.omnilib.preference.WifiSelectListPreference;
+import org.omnirom.omnibrain.actions.ActionListPreference;
 import org.omnirom.omnilib.fragments.OmniLibPreferenceFragment;
+import org.omnirom.omnilib.preference.WifiSelectListPreference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,18 +36,17 @@ import java.util.Collection;
 import java.util.List;
 
 public class HomeNetworkEventsSettings extends OmniLibPreferenceFragment implements OnPreferenceChangeListener {
-    public static final String EVENTS_PREFERENCES_NAME = "event_service";
 
     public static final String HOME_TAGGED_NETWORKS = "home_tagged_networks";
     public static final String HOME_CONNECT_ACTIONS = "home_connect_actions";
     public static final String HOME_DISCONNECT_ACTIONS = "home_disconnect_actions";
 
     private WifiSelectListPreference mHomeNetworks;
-    private OmniActionsListPreference mHomeConnectActions;
-    private OmniActionsListPreference mHomeDisconnectActions;
+    private ActionListPreference mHomeConnectActions;
+    private ActionListPreference mHomeDisconnectActions;
 
     private SharedPreferences getPrefs() {
-        return getActivity().getSharedPreferences(EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        return getActivity().getSharedPreferences(EventCategoryFragment.EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
     }
 
     @Override
@@ -72,7 +69,7 @@ public class HomeNetworkEventsSettings extends OmniLibPreferenceFragment impleme
         ));
         mHomeNetworks.setOnPreferenceChangeListener(this);
 
-        mHomeConnectActions = (OmniActionsListPreference) findPreference(HOME_CONNECT_ACTIONS);
+        mHomeConnectActions = (ActionListPreference) findPreference(HOME_CONNECT_ACTIONS);
         mHomeConnectActions.loadActions(R.xml.omni_actions);
         mHomeConnectActions.setEnabled(is_set);
         value = getPrefs().getString(HOME_CONNECT_ACTIONS, null);
@@ -87,7 +84,7 @@ public class HomeNetworkEventsSettings extends OmniLibPreferenceFragment impleme
         ));
         mHomeConnectActions.setOnPreferenceChangeListener(this);
 
-        mHomeDisconnectActions = (OmniActionsListPreference) findPreference(HOME_DISCONNECT_ACTIONS);
+        mHomeDisconnectActions = (ActionListPreference) findPreference(HOME_DISCONNECT_ACTIONS);
         mHomeDisconnectActions.loadActions(R.xml.omni_actions);
         mHomeDisconnectActions.setEnabled(is_set);
         value = getPrefs().getString(HOME_DISCONNECT_ACTIONS, null);
