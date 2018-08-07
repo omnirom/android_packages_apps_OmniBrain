@@ -16,7 +16,7 @@
  *
  */
 
-package org.omnirom.omnibrain;
+package org.omnirom.omnibrain.fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -38,7 +38,6 @@ import java.util.Collection;
 import java.util.List;
 
 public class PublicNetworkEventsSettings extends OmniLibPreferenceFragment implements OnPreferenceChangeListener {
-    public static final String EVENTS_PREFERENCES_NAME = "event_service";
 
     public static final String PUBLIC_CONNECT_ACTIONS = "public_connect_actions";
     public static final String PUBLIC_DISCONNECT_ACTIONS = "public_disconnect_actions";
@@ -47,7 +46,7 @@ public class PublicNetworkEventsSettings extends OmniLibPreferenceFragment imple
     private OmniActionsListPreference mPublicDisconnectActions;
 
     private SharedPreferences getPrefs() {
-        return getActivity().getSharedPreferences(EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        return getActivity().getSharedPreferences(EventCategoryFragment.EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
     }
 
     @Override

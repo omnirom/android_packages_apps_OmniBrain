@@ -16,7 +16,7 @@
  *
  */
 
-package org.omnirom.omnibrain;
+package org.omnirom.omnibrain.fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -38,7 +38,6 @@ import java.util.Collection;
 import java.util.List;
 
 public class HomeNetworkEventsSettings extends OmniLibPreferenceFragment implements OnPreferenceChangeListener {
-    public static final String EVENTS_PREFERENCES_NAME = "event_service";
 
     public static final String HOME_TAGGED_NETWORKS = "home_tagged_networks";
     public static final String HOME_CONNECT_ACTIONS = "home_connect_actions";
@@ -49,7 +48,7 @@ public class HomeNetworkEventsSettings extends OmniLibPreferenceFragment impleme
     private OmniActionsListPreference mHomeDisconnectActions;
 
     private SharedPreferences getPrefs() {
-        return getActivity().getSharedPreferences(EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        return getActivity().getSharedPreferences(EventCategoryFragment.EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
     }
 
     @Override
