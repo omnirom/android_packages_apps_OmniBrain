@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  Copyright (C) 2018 The OmniROM Project
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="category_media_player"
+    android:title="@string/category_media_player_title">
+
+    <android.support.v7.preference.PreferenceCategory
+        android:key="media_triggers"
+        android:title="@string/media_triggers_title">
+
+        <android.support.v14.preference.SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/ic_headset_24dp"
+            android:key="headset_connect"
+            android:summary="@string/headset_connect_summary"
+            android:title="@string/headset_connect_title" />
+
+        <org.omnirom.omnilib.preference.SeekBarPreference
+            android:dependency="headset_connect"
+            android:key="wired_events_threshold"
+            android:max="6"
+            android:summary="@string/wired_events_threshold_summary"
+            android:title="@string/wired_events_threshold_title"
+            settings:min="0"
+            settings:unitsRight="@string/unit_sec" />
+
+    </android.support.v7.preference.PreferenceCategory>
+
+    <android.support.v7.preference.PreferenceCategory
+        android:key="category_app_chooser"
+        android:title="@string/category_app_chooser_title">
+
+        <org.omnirom.omnilib.preference.AppMultiSelectListPreference
+            android:key="media_apps_list"
+            android:summary="@string/media_apps_list_summary"
+            android:title="@string/media_apps_list_title" />
+
+        <org.omnirom.omnilib.preference.ScrollAppsViewPreference
+            android:key="media_apps_list_view"
+            android:selectable="false" />
+
+        <android.support.v14.preference.SwitchPreference
+            android:defaultValue="true"
+            android:key="autorun_single_app"
+            android:summary="@string/autorun_single_app_summary"
+            android:title="@string/autorun_single_app_title" />
+
+        <org.omnirom.omnilib.preference.SeekBarPreference
+            android:key="app_chooser_timeout"
+            android:max="60"
+            android:title="@string/app_chooser_timeout_title"
+            settings:min="0"
+            settings:unitsRight="@string/unit_sec" />
+
+        <android.support.v7.preference.ListPreference
+            android:entries="@array/app_chooser_position_entries"
+            android:entryValues="@array/app_chooser_position_values"
+            android:key="app_chooser_position"
+            android:title="@string/app_chooser_position_title" />
+
+    </android.support.v7.preference.PreferenceCategory>
+
+    <android.support.v7.preference.PreferenceCategory
+        android:key="media_settings"
+        android:title="@string/media_settings_title">
+
+        <android.support.v14.preference.SwitchPreference
+            android:defaultValue="true"
+            android:key="media_player_music_active"
+            android:title="@string/media_player_music_active_title" />º
+
+        <android.support.v14.preference.SwitchPreference
+            android:key="media_player_autostart"
+            android:title="@string/media_player_autostart_title" />
+
+    </android.support.v7.preference.PreferenceCategory>
+
+</android.support.v7.preference.PreferenceScreen>
