@@ -24,11 +24,11 @@
         android:key="home_tagged_networks"
         android:title="@string/tagged_networks_title" />
 
-    <org.omnirom.omnilib.preference.OmniActionsListPreference
+    <org.omnirom.omnibrain.actions.ActionListPreference
         android:key="home_connect_actions"
         android:title="@string/home_connect_actions_title" />
 
-    <org.omnirom.omnilib.preference.OmniActionsListPreference
+    <org.omnirom.omnibrain.actions.ActionListPreference
         android:key="home_disconnect_actions"
         android:title="@string/home_disconnect_actions_title" />
 </android.support.v7.preference.PreferenceScreen>
