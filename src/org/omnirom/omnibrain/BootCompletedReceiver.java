@@ -20,8 +20,7 @@ package org.omnirom.omnibrain;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+
 import android.util.Log;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
@@ -31,11 +30,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         try {
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-            if (prefs.getBoolean(EventServiceSettings.EVENT_SERVICE_ENABLED, false)) {
-                if (DEBUG) Log.d(TAG, "onReceive " + intent.getAction());
-                context.startService(new Intent(context, EventService.class));
-            }
+            if (DEBUG) Log.d(TAG, "onReceive " + intent.getAction());
+            context.startService(new Intent(context, EventService.class));
         } catch (Exception e) {
             Log.e(TAG, "Can't start OmniBrain service", e);
         }
