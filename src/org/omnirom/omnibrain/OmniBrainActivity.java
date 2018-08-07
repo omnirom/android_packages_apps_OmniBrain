@@ -24,6 +24,8 @@ import android.support.v14.preference.PreferenceFragment;
 import android.support.v7.preference.Preference;
 import android.view.MenuItem;
 
+import org.omnirom.omnibrain.fragments.EventCategoryFragment;
+
 public class OmniBrainActivity extends Activity implements
         PreferenceFragment.OnPreferenceStartFragmentCallback {
     private FragmentManager mFragmentManager;
@@ -38,7 +40,7 @@ public class OmniBrainActivity extends Activity implements
         // Do not overlapping fragments.
         if (savedInstanceState == null) {
             mFragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, new EventServiceSettings())
+                    .replace(R.id.content_frame, new EventCategoryFragment())
                     .commit();
         }
     }
