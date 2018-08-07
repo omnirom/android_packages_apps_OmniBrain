@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  Copyright (C) 2018 The OmniROM Project
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="category_network"
+    android:title="@string/category_wifi_title">
+
+    <android.support.v7.preference.Preference
+        android:fragment="org.omnirom.omnibrain.fragments.HomeNetworkEventsSettings"
+        android:icon="@drawable/ic_settings_home"
+        android:key="home_network_events"
+        android:summary="@string/home_network_events_summary"
+        android:title="@string/home_networks_title" />
+
+    <android.support.v7.preference.Preference
+        android:fragment="org.omnirom.omnibrain.fragments.WorkNetworkEventsSettings"
+        android:icon="@drawable/ic_work_24dp"
+        android:key="work_network_events"
+        android:summary="@string/work_network_events_summary"
+        android:title="@string/work_networks_title" />
+
+    <android.support.v7.preference.Preference
+        android:fragment="org.omnirom.omnibrain.fragments.PublicNetworkEventsSettings"
+        android:icon="@drawable/ic_settings_wireless"
+        android:key="public_network_events"
+        android:summary="@string/public_network_events_summary"
+        android:title="@string/public_networks_title" />
+
+    <org.omnirom.omnilib.preference.SeekBarPreference
+        android:icon="@drawable/ic_wifi_signal_0"
+        android:key="disable_wifi_threshold"
+        android:max="10"
+        android:summary="@string/disable_wifi_threshold_summary"
+        android:title="@string/disable_wifi_threshold_title"
+        settings:min="0"
+        settings:unitsRight="@string/unit_minutes" />
+
+</android.support.v7.preference.PreferenceScreen>
