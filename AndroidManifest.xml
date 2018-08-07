@@ -62,15 +62,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             </intent-filter>
         </activity>
 
+        <!-- 
         <service
             android:exported="false"
             android:enabled="true"
-            android:name="org.omnirom.omnibrain.EventService" />
+            android:name="org.omnirom.omnibrain.service.EventService" />
 
-        <receiver android:name="org.omnirom.omnibrain.BootCompletedReceiver">
+        <receiver android:name="org.omnirom.omnibrain.service.BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+        -->
+
     </application>
 </manifest>
