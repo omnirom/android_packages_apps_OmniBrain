@@ -17,19 +17,15 @@
  -->
 
 <android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:key="work_network_events_settings"
-    android:title="@string/work_networks_title">
-
-    <org.omnirom.omnilib.preference.WifiSelectListPreference
-        android:key="work_tagged_networks"
-        android:title="@string/tagged_networks_title" />
+    android:key="bt_by_device_settings_screen"
+    android:title="@string/bt_by_device_settings_title">
 
     <org.omnirom.omnibrain.actions.ActionListPreference
-        android:key="work_connect_actions"
-        android:title="@string/work_connect_actions_title" />
+        android:key="bt_device_connect_actions"
+        android:title="@string/device_connect_actions_title" />
 
     <org.omnirom.omnibrain.actions.ActionListPreference
-        android:key="work_disconnect_actions"
-        android:title="@string/work_disconnect_actions_title" />
+        android:key="bt_device_disconnect_actions"
+        android:title="@string/device_disconnect_actions_title" />
 
 </android.support.v7.preference.PreferenceScreen>
