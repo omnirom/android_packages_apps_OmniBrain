@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  Copyright (C) 2018 The OmniROM Project
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="event_category"
+    android:title="@string/event_category_title">
+
+    <android.support.v14.preference.SwitchPreference
+        android:key="event_service_enabled"
+        android:title="@string/event_service_enabled_title" />
+
+    <android.support.v7.preference.Preference
+        android:dependency="event_service_enabled"
+        android:fragment="org.omnirom.omnibrain.fragments.MediaPlayerSettings"
+        android:icon="@drawable/ic_play_media"
+        android:key="media_player_events"
+        android:title="@string/category_media_player_title" />
+
+    <android.support.v7.preference.Preference
+        android:dependency="event_service_enabled"
+        android:fragment="org.omnirom.omnibrain.fragments.WifiEventsSettings"
+        android:icon="@drawable/ic_settings_wireless"
+        android:key="wifi_events"
+        android:title="@string/category_wifi_title" />
+
+    <android.support.v7.preference.Preference
+        android:dependency="event_service_enabled"
+        android:fragment="org.omnirom.omnibrain.fragments.BTDeviceEventsFragment"
+        android:icon="@drawable/ic_settings_bluetooth"
+        android:key="bt_devices_events"
+        android:title="@string/bt_events_title" />
+
+    <!--
+        <android.support.v7.preference.Preference
+            android:dependency="event_service_enabled"
+            android:fragment="org.omnirom.omnibrain.fragments.LocationEventsSettings"
+            android:icon="@drawable/ic_location"
+            android:key="location_events"
+            android:title="@string/location_events_title" />
+
+        <android.support.v7.preference.Preference
+            android:dependency="event_service_enabled"
+            android:fragment="org.omnirom.omnibrain.fragments.NFCSettings"
+            android:icon="@drawable/ic_nfc"
+            android:key="nfc_events"
+            android:title="@string/nfc_events_title" />
+        -->
+
+</android.support.v7.preference.PreferenceScreen>
