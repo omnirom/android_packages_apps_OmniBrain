@@ -62,6 +62,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             </intent-filter>
         </activity>
 
+        <!-- 
         <service
             android:exported="false"
             android:enabled="true"
@@ -72,5 +73,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+        -->
+
     </application>
 </manifest>
