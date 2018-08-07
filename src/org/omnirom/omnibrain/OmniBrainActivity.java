@@ -15,17 +15,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
 package org.omnirom.omnibrain;
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.v14.preference.PreferenceFragment;
 import android.support.v7.preference.Preference;
 import android.view.MenuItem;
 
-public class OmniBrainActivity extends Activity implements
-        PreferenceFragment.OnPreferenceStartFragmentCallback {
+import org.omnirom.omnibrain.fragments.EventCategoryFragment;
+import org.omnirom.omnibrain.fragments.MediaPlayerSettings;
+
+public class OmniBrainActivity extends Activity implements PreferenceFragment.OnPreferenceStartFragmentCallback {
+
     private FragmentManager mFragmentManager;
 
     @Override
@@ -38,31 +42,17 @@ public class OmniBrainActivity extends Activity implements
         // Do not overlapping fragments.
         if (savedInstanceState == null) {
             mFragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, new EventServiceSettings())
+                    .replace(R.id.content_frame, new EventCategoryFragment())
                     .commit();
         }
     }
 
     public boolean onPreferenceStartFragment(PreferenceFragment caller, Preference pref) {
         switch (pref.getFragment()) {
-            case "org.omnirom.omnibrain.HomeNetworkEventsSettings":
+            case "org.omnirom.omnibrain.fragments.MediaPlayerSettings":
                 mFragmentManager.beginTransaction()
                         .addToBackStack(null)
-                        .replace(R.id.content_frame, new HomeNetworkEventsSettings())
-                        .commit();
-                setTitle(pref.getTitle());
-                break;
-            case "org.omnirom.omnibrain.WorkNetworkEventsSettings":
-                mFragmentManager.beginTransaction()
-                        .addToBackStack(null)
-                        .replace(R.id.content_frame, new WorkNetworkEventsSettings())
-                        .commit();
-                setTitle(pref.getTitle());
-                break;
-            case "org.omnirom.omnibrain.PublicNetworkEventsSettings":
-                mFragmentManager.beginTransaction()
-                        .addToBackStack(null)
-                        .replace(R.id.content_frame, new PublicNetworkEventsSettings())
+                        .replace(R.id.content_frame, new MediaPlayerSettings())
                         .commit();
                 setTitle(pref.getTitle());
                 break;
@@ -76,7 +66,7 @@ public class OmniBrainActivity extends Activity implements
             super.onBackPressed();
         } else {
             mFragmentManager.popBackStack();
-            setTitle(getResources().getString(R.string.event_service_settings_title));
+            setTitle(getResources().getString(R.string.event_category_title));
         }
     }
 
