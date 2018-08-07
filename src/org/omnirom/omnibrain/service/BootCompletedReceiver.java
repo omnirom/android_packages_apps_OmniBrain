@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.omnirom.omnibrain;
+package org.omnirom.omnibrain.service;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -32,7 +32,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         try {
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-            if (prefs.getBoolean(EventServiceSettings.EVENT_SERVICE_ENABLED, false)) {
+            if (prefs.getBoolean(EventCategoryFragment.EVENT_SERVICE_ENABLED, false)) {
                 if (DEBUG) Log.d(TAG, "onReceive " + intent.getAction());
                 context.startService(new Intent(context, EventService.class));
             }
