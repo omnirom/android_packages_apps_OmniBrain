@@ -15,29 +15,34 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.omnirom.omnibrain;
+package org.omnirom.omnibrain.service;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
+import android.app.Service;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.util.Log;
+import android.os.Binder;
+import android.os.IBinder;
 
-public class BootCompletedReceiver extends BroadcastReceiver {
+import org.omnirom.omnilib.ui.AppChooser;
+
+public class EventService extends Service {
     private static final String TAG = "OmniEventService";
     private static final boolean DEBUG = false;
+    private static boolean mIsRunning;
+    private final LocalBinder mBinder = new LocalBinder();
+
+    public static boolean isRunning() {
+        return mIsRunning;
+    }
 
     @Override
-    public void onReceive(Context context, Intent intent) {
-        try {
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-            if (prefs.getBoolean(EventServiceSettings.EVENT_SERVICE_ENABLED, false)) {
-                if (DEBUG) Log.d(TAG, "onReceive " + intent.getAction());
-                context.startService(new Intent(context, EventService.class));
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "Can't start OmniBrain service", e);
+    public IBinder onBind(Intent intent) {
+        return mBinder;
+    }
+
+    public class LocalBinder extends Binder {
+        public EventService getService() {
+            return EventService.this;
         }
     }
 }
+
