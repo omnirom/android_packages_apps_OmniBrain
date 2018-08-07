@@ -20,11 +20,11 @@
     android:key="public_network_events_settings"
     android:title="@string/public_networks_title">
 
-    <org.omnirom.omnilib.preference.OmniActionsListPreference
+    <org.omnirom.omnibrain.actions.ActionListPreference
         android:key="public_connect_actions"
         android:title="@string/public_connect_actions_title" />
 
-    <org.omnirom.omnilib.preference.OmniActionsListPreference
+    <org.omnirom.omnibrain.actions.ActionListPreference
         android:key="public_disconnect_actions"
         android:title="@string/public_disconnect_actions_title" />
 

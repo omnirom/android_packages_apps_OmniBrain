@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--  Copyright (C) 2016 The OmniROM Project
 
   This program is free software: you can redistribute it and/or modify
@@ -16,17 +15,17 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
-        <shape android:shape="rectangle" >
-            <solid android:color="?android:attr/colorBackgroundFloating" />
-            <corners android:radius="10dp" />
-        </shape>
-    </item>
-    <item>
-        <shape android:shape="rectangle" >
-            <stroke android:width="1dp" android:color="@android:color/black" />
-            <corners android:radius="10dp" />
-        </shape>
-    </item>
-</layer-list>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/alert_dialog_padding_material"
+    android:paddingEnd="@dimen/alert_dialog_padding_material">
+
+    <ListView
+        android:id="@+id/action_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null" />
+</LinearLayout>
