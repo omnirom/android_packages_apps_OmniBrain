@@ -16,7 +16,7 @@
  *
  */
 
-package org.omnirom.omnibrain;
+package org.omnirom.omnibrain.fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -26,12 +26,9 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.text.TextUtils;
 
 import org.omnirom.omnibrain.R;
-
+import org.omnirom.omnilib.fragments.OmniLibPreferenceFragment;
 import org.omnirom.omnilib.preference.OmniActionsListPreference;
 import org.omnirom.omnilib.preference.WifiSelectListPreference;
-import org.omnirom.omnilib.fragments.OmniLibPreferenceFragment;
-
-import android.support.v14.preference.PreferenceFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,8 +36,6 @@ import java.util.Collection;
 import java.util.List;
 
 public class WorkNetworkEventsSettings extends OmniLibPreferenceFragment implements OnPreferenceChangeListener {
-    public static final String EVENTS_PREFERENCES_NAME = "event_service";
-
 
     public static final String WORK_TAGGED_NETWORKS = "work_tagged_networks";
     public static final String WORK_CONNECT_ACTIONS = "work_connect_actions";
@@ -52,7 +47,7 @@ public class WorkNetworkEventsSettings extends OmniLibPreferenceFragment impleme
     private OmniActionsListPreference mWorkDisconnectActions;
 
     private SharedPreferences getPrefs() {
-        return getActivity().getSharedPreferences(EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        return getActivity().getSharedPreferences(EventCategoryFragment.EVENTS_PREFERENCES_NAME, Context.MODE_PRIVATE);
     }
 
     @Override
