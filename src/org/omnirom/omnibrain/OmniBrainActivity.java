@@ -15,17 +15,27 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
 package org.omnirom.omnibrain;
 
-import android.app.FragmentManager;
-import android.os.Bundle;
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.os.Bundle;
 import android.support.v14.preference.PreferenceFragment;
 import android.support.v7.preference.Preference;
 import android.view.MenuItem;
 
-public class OmniBrainActivity extends Activity implements
-        PreferenceFragment.OnPreferenceStartFragmentCallback {
+import org.omnirom.omnibrain.fragments.BTByDeviceSettings;
+import org.omnirom.omnibrain.fragments.EventCategoryFragment;
+import org.omnirom.omnibrain.fragments.HomeNetworkEventsSettings;
+import org.omnirom.omnibrain.fragments.MediaPlayerSettings;
+import org.omnirom.omnibrain.fragments.PublicNetworkEventsSettings;
+import org.omnirom.omnibrain.fragments.WifiEventsSettings;
+import org.omnirom.omnibrain.fragments.WorkNetworkEventsSettings;
+
+public class OmniBrainActivity extends Activity implements PreferenceFragment.OnPreferenceStartFragmentCallback {
+
     private FragmentManager mFragmentManager;
 
     @Override
@@ -38,35 +48,41 @@ public class OmniBrainActivity extends Activity implements
         // Do not overlapping fragments.
         if (savedInstanceState == null) {
             mFragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, new EventServiceSettings())
+                    .replace(R.id.content_frame, new EventCategoryFragment())
                     .commit();
         }
     }
 
     public boolean onPreferenceStartFragment(PreferenceFragment caller, Preference pref) {
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        transaction.addToBackStack(null);
+
         switch (pref.getFragment()) {
-            case "org.omnirom.omnibrain.HomeNetworkEventsSettings":
-                mFragmentManager.beginTransaction()
-                        .addToBackStack(null)
-                        .replace(R.id.content_frame, new HomeNetworkEventsSettings())
-                        .commit();
-                setTitle(pref.getTitle());
+            case "org.omnirom.omnibrain.fragments.MediaPlayerSettings":
+                transaction.replace(R.id.content_frame, new MediaPlayerSettings());
                 break;
-            case "org.omnirom.omnibrain.WorkNetworkEventsSettings":
-                mFragmentManager.beginTransaction()
-                        .addToBackStack(null)
-                        .replace(R.id.content_frame, new WorkNetworkEventsSettings())
-                        .commit();
-                setTitle(pref.getTitle());
+            case "org.omnirom.omnibrain.fragments.WifiEventsSettings":
+                transaction.replace(R.id.content_frame, new WifiEventsSettings());
                 break;
-            case "org.omnirom.omnibrain.PublicNetworkEventsSettings":
-                mFragmentManager.beginTransaction()
-                        .addToBackStack(null)
-                        .replace(R.id.content_frame, new PublicNetworkEventsSettings())
-                        .commit();
-                setTitle(pref.getTitle());
+            case "org.omnirom.omnibrain.fragments.HomeNetworkEventsSettings":
+                transaction.replace(R.id.content_frame, new HomeNetworkEventsSettings());
                 break;
+            case "org.omnirom.omnibrain.fragments.WorkNetworkEventsSettings":
+                transaction.replace(R.id.content_frame, new WorkNetworkEventsSettings());
+                break;
+            case "org.omnirom.omnibrain.fragments.PublicNetworkEventsSettings":
+                transaction.replace(R.id.content_frame, new PublicNetworkEventsSettings());
+                break;
+            case "org.omnirom.omnibrain.fragments.BTByDeviceSettings":
+                transaction.replace(R.id.content_frame, new BTByDeviceSettings());
+                break;
+            default:
+                return false;
         }
+
+        transaction.commit();
+        setTitle(pref.getTitle());
+
         return true;
     }
 
@@ -76,7 +92,7 @@ public class OmniBrainActivity extends Activity implements
             super.onBackPressed();
         } else {
             mFragmentManager.popBackStack();
-            setTitle(getResources().getString(R.string.event_service_settings_title));
+            setTitle(getResources().getString(R.string.event_category_title));
         }
     }
 

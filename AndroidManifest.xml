@@ -23,8 +23,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="27"
-        android:targetSdkVersion="27" />
+        android:minSdkVersion="28"
+        android:targetSdkVersion="28" />
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -65,12 +65,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <service
             android:exported="false"
             android:enabled="true"
-            android:name="org.omnirom.omnibrain.EventService" />
+            android:name="org.omnirom.omnibrain.service.EventService" />
 
-        <receiver android:name="org.omnirom.omnibrain.BootCompletedReceiver">
+        <receiver android:name="org.omnirom.omnibrain.service.BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+
     </application>
 </manifest>
